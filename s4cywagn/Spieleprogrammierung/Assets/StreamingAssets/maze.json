@@ -1,0 +1,50 @@
+{
+  "width": 2,
+  "height": 2,
+  "cells": [
+    {
+      "x": 0,
+      "y": 0,
+      "wallNorth": true,
+      "wallSouth": false,
+      "wallEast": false,
+      "wallWest": true,
+      "material": "absorb",
+      "isLight": true,
+      "isGoal": false
+    },
+    {
+      "x": 1,
+      "y": 0,
+      "wallNorth": true,
+      "wallSouth": false,
+      "wallEast": true,
+      "wallWest": false,
+      "material": "reflect",
+      "isLight": false,
+      "isGoal": false
+    },
+    {
+      "x": 0,
+      "y": 1,
+      "wallNorth": false,
+      "wallSouth": true,
+      "wallEast": false,
+      "wallWest": true,
+      "material": "transparent",
+      "isLight": false,
+      "isGoal": false
+    },
+    {
+      "x": 1,
+      "y": 1,
+      "wallNorth": false,
+      "wallSouth": true,
+      "wallEast": true,
+      "wallWest": false,
+      "material": "absorb",
+      "isLight": false,
+      "isGoal": true
+    }
+  ]
+}

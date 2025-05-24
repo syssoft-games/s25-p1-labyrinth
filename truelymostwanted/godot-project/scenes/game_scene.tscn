@@ -1,0 +1,129 @@
+[gd_scene load_steps=16 format=3 uid="uid://c4i4mdgyjqgtg"]
+
+[ext_resource type="Script" uid="uid://crx5v2lrs7lxf" path="res://scripts/GameApplication.cs" id="1_s76x2"]
+[ext_resource type="PackedScene" uid="uid://c2xer14lv8jdx" path="res://packed-scenes/core/menus/specific/setup_menu.tscn" id="4_77hjl"]
+[ext_resource type="PackedScene" uid="uid://tf1f4m60ri25" path="res://packed-scenes/core/time/time_controller.tscn" id="9_rvs2r"]
+[ext_resource type="Script" uid="uid://ctm2fi05k81fr" path="res://scripts/game/player/PlayerController3D.cs" id="10_tqxxy"]
+[ext_resource type="PackedScene" uid="uid://bj17hl5840dts" path="res://packed-scenes/game/players/player_3d.tscn" id="11_ldkr4"]
+[ext_resource type="PackedScene" uid="uid://dt62vrc0wd1gh" path="res://packed-scenes/game/levels/level_controller_3d.tscn" id="12_liy57"]
+[ext_resource type="PackedScene" uid="uid://b0g7xqaa1qqgb" path="res://packed-scenes/core/menus/menu_controller.tscn" id="12_mwyo0"]
+[ext_resource type="PackedScene" uid="uid://hvmivga6xqxh" path="res://packed-scenes/core/menus/specific/main_menu.tscn" id="13_s76x2"]
+[ext_resource type="PackedScene" uid="uid://diw5fjea1jxmm" path="res://packed-scenes/game/gui/game_ui.tscn" id="13_tqxxy"]
+[ext_resource type="PackedScene" uid="uid://cd04sjth30joj" path="res://packed-scenes/core/menus/specific/tutorial_menu.tscn" id="14_77hjl"]
+[ext_resource type="PackedScene" uid="uid://gj7uaal65c7k" path="res://packed-scenes/core/menus/specific/options_menu.tscn" id="15_6aqbo"]
+[ext_resource type="PackedScene" uid="uid://y87txeuxvg3x" path="res://packed-scenes/core/menus/specific/credits_menu.tscn" id="16_ro0ie"]
+[ext_resource type="PackedScene" uid="uid://bfwvu6qkkusc4" path="res://packed-scenes/core/menus/specific/pause_menu.tscn" id="17_103ce"]
+
+[sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_bw6k5"]
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_y3j0m"]
+size = Vector2(100, 100)
+
+[node name="Application" type="Node"]
+script = ExtResource("1_s76x2")
+
+[node name="Core" type="Node" parent="."]
+
+[node name="MenuController" parent="Core" instance=ExtResource("12_mwyo0")]
+process_mode = 3
+mouse_filter = 1
+
+[node name="Main" parent="Core/MenuController" node_paths=PackedStringArray("ParentController") instance=ExtResource("13_s76x2")]
+custom_minimum_size = Vector2(0, 0)
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_right = 0.0
+offset_top = -1080.0
+offset_right = 1920.0
+grow_horizontal = 1
+grow_vertical = 0
+mouse_filter = 0
+ParentController = NodePath("..")
+
+[node name="Setup" parent="Core/MenuController" instance=ExtResource("4_77hjl")]
+layout_mode = 0
+anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_right = 1920.0
+offset_bottom = 1080.0
+grow_horizontal = 1
+grow_vertical = 1
+
+[node name="Tutorial" parent="Core/MenuController" node_paths=PackedStringArray("ParentController") instance=ExtResource("14_77hjl")]
+custom_minimum_size = Vector2(0, 0)
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_right = 0.0
+offset_top = -1080.0
+offset_right = 1920.0
+grow_horizontal = 1
+grow_vertical = 0
+mouse_filter = 0
+ParentController = NodePath("..")
+
+[node name="Options" parent="Core/MenuController" node_paths=PackedStringArray("ParentController") instance=ExtResource("15_6aqbo")]
+custom_minimum_size = Vector2(0, 0)
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_right = 0.0
+offset_top = -1080.0
+offset_right = 1920.0
+grow_horizontal = 1
+grow_vertical = 0
+mouse_filter = 0
+ParentController = NodePath("..")
+
+[node name="Credits" parent="Core/MenuController" node_paths=PackedStringArray("ParentController") instance=ExtResource("16_ro0ie")]
+custom_minimum_size = Vector2(0, 0)
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_right = 0.0
+offset_top = -1080.0
+offset_right = 1920.0
+grow_horizontal = 1
+grow_vertical = 0
+mouse_filter = 0
+ParentController = NodePath("..")
+
+[node name="Pause" parent="Core/MenuController" node_paths=PackedStringArray("ParentController") instance=ExtResource("17_103ce")]
+custom_minimum_size = Vector2(0, 0)
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_right = 0.0
+offset_top = -1080.0
+offset_right = 1920.0
+grow_horizontal = 1
+grow_vertical = 0
+mouse_filter = 0
+ParentController = NodePath("..")
+
+[node name="TimeController" parent="Core" instance=ExtResource("9_rvs2r")]
+
+[node name="Game" type="Node3D" parent="."]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Game"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Game/StaticBody3D"]
+shape = SubResource("WorldBoundaryShape3D_bw6k5")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Game/StaticBody3D"]
+visible = false
+mesh = SubResource("PlaneMesh_y3j0m")
+
+[node name="PlayerController3D" type="Node3D" parent="Game" node_paths=PackedStringArray("CurrentPlayer")]
+script = ExtResource("10_tqxxy")
+CurrentPlayer = NodePath("Player3D")
+metadata/_custom_type_script = "uid://ctm2fi05k81fr"
+
+[node name="Player3D" parent="Game/PlayerController3D" instance=ExtResource("11_ldkr4")]
+transform = Transform3D(-1, 0, 1.50996e-07, 0, 1, 0, -1.50996e-07, 0, -1, 0, 0.636973, 0.822873)
+
+[node name="LevelController3D" parent="Game" instance=ExtResource("12_liy57")]
+
+[node name="GameUI" parent="Game" instance=ExtResource("13_tqxxy")]

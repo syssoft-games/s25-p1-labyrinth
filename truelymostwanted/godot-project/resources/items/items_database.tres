@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="ItemDatabase" load_steps=3 format=3 uid="uid://bjfckx02co6gn"]
+
+[ext_resource type="Resource" uid="uid://by6cp7pfpsqlk" path="res://resources/items/orb_item_data.tres" id="1_avwnd"]
+[ext_resource type="Script" uid="uid://xs8be26hlu3" path="res://scripts/game/items/ItemDatabase.cs" id="1_frm4p"]
+
+[resource]
+script = ExtResource("1_frm4p")
+Items = Array[Object]([ExtResource("1_avwnd")])
+metadata/_custom_type_script = "uid://xs8be26hlu3"

@@ -1,0 +1,70 @@
+[gd_resource type="Resource" script_class="Inventory" load_steps=13 format=3 uid="uid://b66d2hw7i5t37"]
+
+[ext_resource type="Script" uid="uid://25dvol8myqoc" path="res://scripts/game/inventory/InventorySlot.cs" id="1_1qrra"]
+[ext_resource type="Script" uid="uid://dy7xgcwqdbwan" path="res://scripts/game/inventory/Inventory.cs" id="2_ny04u"]
+
+[sub_resource type="Resource" id="Resource_670nd"]
+script = ExtResource("1_1qrra")
+ID = 0
+Amount = 0
+metadata/_custom_type_script = "uid://25dvol8myqoc"
+
+[sub_resource type="Resource" id="Resource_mwsy3"]
+script = ExtResource("1_1qrra")
+ID = 1
+Amount = 0
+metadata/_custom_type_script = "uid://25dvol8myqoc"
+
+[sub_resource type="Resource" id="Resource_jnbml"]
+script = ExtResource("1_1qrra")
+ID = 2
+Amount = 0
+metadata/_custom_type_script = "uid://25dvol8myqoc"
+
+[sub_resource type="Resource" id="Resource_dsh6f"]
+script = ExtResource("1_1qrra")
+ID = 3
+Amount = 0
+metadata/_custom_type_script = "uid://25dvol8myqoc"
+
+[sub_resource type="Resource" id="Resource_oc0xw"]
+script = ExtResource("1_1qrra")
+ID = 4
+Amount = 0
+metadata/_custom_type_script = "uid://25dvol8myqoc"
+
+[sub_resource type="Resource" id="Resource_5aqv2"]
+script = ExtResource("1_1qrra")
+ID = 5
+Amount = 0
+metadata/_custom_type_script = "uid://25dvol8myqoc"
+
+[sub_resource type="Resource" id="Resource_5sytc"]
+script = ExtResource("1_1qrra")
+ID = 6
+Amount = 0
+metadata/_custom_type_script = "uid://25dvol8myqoc"
+
+[sub_resource type="Resource" id="Resource_tnkaj"]
+script = ExtResource("1_1qrra")
+ID = 7
+Amount = 0
+metadata/_custom_type_script = "uid://25dvol8myqoc"
+
+[sub_resource type="Resource" id="Resource_4qa2x"]
+script = ExtResource("1_1qrra")
+ID = 8
+Amount = 0
+metadata/_custom_type_script = "uid://25dvol8myqoc"
+
+[sub_resource type="Resource" id="Resource_olhto"]
+script = ExtResource("1_1qrra")
+ID = 9
+Amount = 0
+metadata/_custom_type_script = "uid://25dvol8myqoc"
+
+[resource]
+script = ExtResource("2_ny04u")
+ItemSlots = Array[Object]([SubResource("Resource_670nd"), SubResource("Resource_mwsy3"), SubResource("Resource_jnbml"), SubResource("Resource_dsh6f"), SubResource("Resource_oc0xw"), SubResource("Resource_5aqv2"), SubResource("Resource_5sytc"), SubResource("Resource_tnkaj"), SubResource("Resource_4qa2x"), SubResource("Resource_olhto")])
+CurrentSlotIndex = 0
+metadata/_custom_type_script = "uid://dy7xgcwqdbwan"

@@ -1,0 +1,43 @@
+[gd_scene load_steps=7 format=3 uid="uid://3sbjrrgo5cj1"]
+
+[ext_resource type="Script" uid="uid://bqn7wl2g15i12" path="res://scripts/game/items/Item3D.cs" id="1_4idmn"]
+[ext_resource type="Resource" uid="uid://by6cp7pfpsqlk" path="res://resources/items/orb_item_data.tres" id="2_5q8fl"]
+[ext_resource type="Script" uid="uid://cgrcjq4wcyorn" path="res://scripts/game/items/ItemCollectArea3D.cs" id="2_oa74i"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_oa74i"]
+specular_mode = 2
+disable_ambient_light = true
+disable_fog = true
+disable_specular_occlusion = true
+albedo_color = Color(0, 0.443137, 1, 1)
+emission_enabled = true
+emission = Color(0, 0.372549, 1, 1)
+emission_energy_multiplier = 5.0
+
+[sub_resource type="SphereMesh" id="SphereMesh_5q8fl"]
+material = SubResource("StandardMaterial3D_oa74i")
+radius = 0.25
+height = 0.5
+radial_segments = 16
+rings = 8
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_5q8fl"]
+
+[node name="Item3D" type="Node3D" node_paths=PackedStringArray("ItemCollectArea")]
+script = ExtResource("1_4idmn")
+ItemData = ExtResource("2_5q8fl")
+ItemCollectArea = NodePath("ItemCollectArea3D")
+metadata/_custom_type_script = "uid://bqn7wl2g15i12"
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.321512, 0)
+mesh = SubResource("SphereMesh_5q8fl")
+
+[node name="ItemCollectArea3D" type="Area3D" parent="." node_paths=PackedStringArray("Item")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.321512, 0)
+script = ExtResource("2_oa74i")
+Item = NodePath("..")
+metadata/_custom_type_script = "uid://cgrcjq4wcyorn"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="ItemCollectArea3D"]
+shape = SubResource("SphereShape3D_5q8fl")

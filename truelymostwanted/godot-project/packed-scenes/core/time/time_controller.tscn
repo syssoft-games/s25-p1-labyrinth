@@ -1,0 +1,61 @@
+[gd_scene load_steps=6 format=3 uid="uid://tf1f4m60ri25"]
+
+[ext_resource type="Script" uid="uid://yo4hbyj5u8nw" path="res://scripts/core/time/TimeController.cs" id="1_ygbie"]
+[ext_resource type="Material" uid="uid://dbw1djhdpc3o3" path="res://resources/shaders/StylizedSkyWithProceduralSunAndMoon_ShaderMaterial.tres" id="2_hggi7"]
+
+[sub_resource type="Curve" id="Curve_xgstd"]
+_limits = [0.0, 360.0, 0.0, 1.0]
+_data = [Vector2(0, 0), 0.0, 340.244, 0, 0, Vector2(0.129699, 27.345), 330.481, 330.481, 0, 0, Vector2(0.255639, 59.9582), 413.101, 413.101, 0, 0, Vector2(0.879699, 325.756), 642.601, 642.601, 0, 0, Vector2(1, 360), 123.93, 0.0, 0, 0]
+point_count = 5
+
+[sub_resource type="Sky" id="Sky_ycayy"]
+sky_material = ExtResource("2_hggi7")
+
+[sub_resource type="Environment" id="Environment_bw6k5"]
+background_mode = 2
+sky = SubResource("Sky_ycayy")
+ambient_light_energy = 1.5
+tonemap_mode = 4
+ssr_enabled = true
+ssao_enabled = true
+ssil_enabled = true
+sdfgi_enabled = true
+sdfgi_use_occlusion = true
+glow_enabled = true
+glow_intensity = 2.0
+fog_enabled = true
+fog_light_color = Color(0.096093, 0.108506, 0.12802, 1)
+fog_light_energy = 2.5
+fog_sun_scatter = 1.0
+fog_density = 0.03
+fog_aerial_perspective = 0.046
+fog_sky_affect = 0.0
+volumetric_fog_enabled = true
+volumetric_fog_density = 0.15
+volumetric_fog_albedo = Color(0.0476483, 0.53414, 0.787279, 1)
+volumetric_fog_anisotropy = 0.9
+volumetric_fog_length = 2.0
+volumetric_fog_ambient_inject = 4.0
+
+[node name="TimeController" type="Node3D" node_paths=PackedStringArray("LightsRoot")]
+script = ExtResource("1_ygbie")
+LightsRoot = NodePath("SunMoonParent")
+SecondsPerDay = 300.0
+RotationCurve = SubResource("Curve_xgstd")
+metadata/_custom_type_script = "uid://yo4hbyj5u8nw"
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_bw6k5")
+
+[node name="SunMoonParent" type="Node3D" parent="."]
+
+[node name="DirectionalLight3D_Sun" type="DirectionalLight3D" parent="SunMoonParent"]
+transform = Transform3D(1, 0, 0, 0, -0.422618, -0.906308, 0, 0.906308, -0.422618, 0, 0, 0)
+shadow_enabled = true
+
+[node name="DirectionalLight3D_Moon" type="DirectionalLight3D" parent="SunMoonParent"]
+transform = Transform3D(1, 0, 0, 0, 2.23517e-08, 1, 0, -1, 2.23517e-08, 0, 0, 0)
+light_color = Color(0.338025, 0.524005, 0.635037, 1)
+light_energy = 0.61
+light_volumetric_fog_energy = 2.755
+shadow_enabled = true

@@ -1,0 +1,111 @@
+[gd_scene load_steps=10 format=3 uid="uid://c2xer14lv8jdx"]
+
+[ext_resource type="PackedScene" uid="uid://bxxx4vmewps02" path="res://packed-scenes/core/menus/menu.tscn" id="1_yrfkk"]
+[ext_resource type="Script" uid="uid://uqtd11u1eiw8" path="res://scripts/core/functions/StartGameFunction.cs" id="2_jjj26"]
+[ext_resource type="Script" uid="uid://41prknyrg7t" path="res://scripts/game/functions/GenerateLevelFunction.cs" id="2_pjyfa"]
+[ext_resource type="Script" uid="uid://dx766eiqa564q" path="res://scripts/core/functions/FunctionButton.cs" id="3_58xhv"]
+[ext_resource type="Script" uid="uid://ccpr1035nlxns" path="res://scripts/game/functions/ResetInventoryFunction.cs" id="4_tfjcd"]
+[ext_resource type="Texture2D" uid="uid://bta46sjflics" path="res://resources/textures/gui_menu_nav_button_frame.png" id="4_yt75h"]
+[ext_resource type="Script" uid="uid://dq1awig02xr48" path="res://scripts/game/functions/EnableGameUiFunction.cs" id="5_ngfh1"]
+[ext_resource type="Script" uid="uid://p10unih1fet1" path="res://scripts/game/functions/LoadLevelFunction.cs" id="6_pjyfa"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_jatpd"]
+texture = ExtResource("4_yt75h")
+
+[node name="Setup" instance=ExtResource("1_yrfkk")]
+
+[node name="MenuNavButton" parent="Control/VBoxContainer" index="0" node_paths=PackedStringArray("Functions")]
+visible = false
+Functions = []
+
+[node name="MenuNavButton2" parent="Control/VBoxContainer" index="1" node_paths=PackedStringArray("Functions")]
+visible = false
+Functions = []
+
+[node name="MenuNavButton3" parent="Control/VBoxContainer" index="2" node_paths=PackedStringArray("Functions")]
+visible = false
+Functions = []
+
+[node name="MenuNavButton4" parent="Control/VBoxContainer" index="3" node_paths=PackedStringArray("Functions")]
+text = "Start"
+TargetMenuName = "Pause"
+TargetVisibility = false
+Functions = [NodePath("GenerateLevelFunction"), NodePath("StartGameFunction"), NodePath("ResetInventoryFunction"), NodePath("EnableGameUiFunction")]
+
+[node name="GenerateLevelFunction" type="Node" parent="Control/VBoxContainer/MenuNavButton4" index="1"]
+script = ExtResource("2_pjyfa")
+metadata/_custom_type_script = "uid://41prknyrg7t"
+
+[node name="StartGameFunction" type="Node" parent="Control/VBoxContainer/MenuNavButton4" index="2"]
+script = ExtResource("2_jjj26")
+metadata/_custom_type_script = "uid://uqtd11u1eiw8"
+
+[node name="ResetInventoryFunction" type="Node" parent="Control/VBoxContainer/MenuNavButton4" index="3"]
+script = ExtResource("4_tfjcd")
+metadata/_custom_type_script = "uid://ccpr1035nlxns"
+
+[node name="EnableGameUiFunction" type="Node" parent="Control/VBoxContainer/MenuNavButton4" index="4"]
+script = ExtResource("5_ngfh1")
+metadata/_custom_type_script = "uid://dq1awig02xr48"
+
+[node name="MenuNavButton5" parent="Control/VBoxContainer" index="4" node_paths=PackedStringArray("Functions")]
+TargetMenuName = "Main"
+Functions = []
+
+[node name="LevelSelection_FileDialog" type="FileDialog" parent="Control" index="1"]
+oversampling_override = 1.0
+title = "Open a File"
+position = Vector2i(150, 150)
+size = Vector2i(750, 500)
+theme_override_colors/folder_icon_color = Color(1, 0.793, 0.31, 1)
+theme_override_colors/file_icon_color = Color(1.54018e-06, 0.703554, 0.913702, 1)
+ok_button_text = "Load Level"
+dialog_close_on_escape = false
+file_mode = 0
+access = 1
+filters = PackedStringArray("*.png", "*.jpg", "*.jpeg")
+
+[node name="LevelPreview_Panel" type="Panel" parent="Control" index="2"]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 1216.0
+offset_top = -535.0
+offset_right = 1277.0
+offset_bottom = -440.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+mouse_behavior_recursive = 1
+
+[node name="LoadLevelButton" type="Button" parent="Control" index="3" node_paths=PackedStringArray("Functions")]
+custom_minimum_size = Vector2(400, 70)
+layout_mode = 0
+offset_left = 151.0
+offset_top = 10.0
+offset_right = 903.225
+offset_bottom = 80.0
+theme_override_font_sizes/font_size = 25
+text = "Select Level File"
+script = ExtResource("3_58xhv")
+Functions = [NodePath("LoadLevelFunction")]
+metadata/_custom_type_script = "uid://dbd5j22k45if0"
+
+[node name="Panel" type="Panel" parent="Control/LoadLevelButton" index="0"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+mouse_behavior_recursive = 1
+theme_override_styles/panel = SubResource("StyleBoxTexture_jatpd")
+
+[node name="LoadLevelFunction" type="Node" parent="Control/LoadLevelButton" index="1" node_paths=PackedStringArray("Dialog", "LevelPreview")]
+script = ExtResource("6_pjyfa")
+Dialog = NodePath("../../LevelSelection_FileDialog")
+LevelPreview = NodePath("../../LevelPreview_Panel")
+metadata/_custom_type_script = "uid://p10unih1fet1"

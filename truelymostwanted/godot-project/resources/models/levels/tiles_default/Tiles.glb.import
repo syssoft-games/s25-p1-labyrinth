@@ -1,0 +1,188 @@
+[remap]
+
+importer="scene"
+importer_version=1
+type="PackedScene"
+uid="uid://c2r0askuejor8"
+path="res://.godot/imported/Tiles.glb-94582dae7b6ab64029318c5135143a5f.scn"
+
+[deps]
+
+source_file="res://resources/models/levels/tiles_default/Tiles.glb"
+dest_files=["res://.godot/imported/Tiles.glb-94582dae7b6ab64029318c5135143a5f.scn"]
+
+[params]
+
+nodes/root_type=""
+nodes/root_name=""
+nodes/apply_root_scale=true
+nodes/root_scale=1.0
+nodes/import_as_skeleton_bones=false
+nodes/use_name_suffixes=true
+nodes/use_node_type_suffixes=true
+meshes/ensure_tangents=true
+meshes/generate_lods=true
+meshes/create_shadow_meshes=true
+meshes/light_baking=1
+meshes/lightmap_texel_size=0.2
+meshes/force_disable_compression=false
+skins/use_named_skins=true
+animation/import=true
+animation/fps=30
+animation/trimming=false
+animation/remove_immutable_tracks=true
+animation/import_rest_as_RESET=false
+import_script/path=""
+_subresources={
+"materials": {
+"Stone Ground": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://resources/models/levels/tiles_default/materials/Stone Ground.tres",
+"use_external/path": "uid://c68xwyrd685ey"
+},
+"Wet concrete wall": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://resources/models/levels/tiles_default/materials/Wet concrete wall.tres",
+"use_external/path": "uid://wvk0a6b6wc2x"
+}
+},
+"meshes": {
+"Tiles_Tile_EN_Mesh": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 60.0,
+"save_to_file/enabled": true,
+"save_to_file/fallback_path": "res://resources/models/levels/tiles_default/meshes/Tiles_Tile_EN_Mesh.res",
+"save_to_file/path": "uid://bvwyjvjns5agn"
+},
+"Tiles_Tile_ESN_Mesh": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 60.0,
+"save_to_file/enabled": true,
+"save_to_file/fallback_path": "res://resources/models/levels/tiles_default/meshes/Tiles_Tile_ESN_Mesh.res",
+"save_to_file/path": "uid://hx23tbk40blv"
+},
+"Tiles_Tile_ESWN_Mesh": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 60.0,
+"save_to_file/enabled": true,
+"save_to_file/fallback_path": "res://resources/models/levels/tiles_default/meshes/Tiles_Tile_ESWN_Mesh.res",
+"save_to_file/path": "uid://cbxq6bblek35i"
+},
+"Tiles_Tile_ESW_Mesh": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 60.0,
+"save_to_file/enabled": true,
+"save_to_file/fallback_path": "res://resources/models/levels/tiles_default/meshes/Tiles_Tile_ESW_Mesh.res",
+"save_to_file/path": "uid://wxecfm5k2uxq"
+},
+"Tiles_Tile_ES_Mesh": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 60.0,
+"save_to_file/enabled": true,
+"save_to_file/fallback_path": "res://resources/models/levels/tiles_default/meshes/Tiles_Tile_ES_Mesh.res",
+"save_to_file/path": "uid://btp6w2dc6od71"
+},
+"Tiles_Tile_EWN_Mesh": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 60.0,
+"save_to_file/enabled": true,
+"save_to_file/fallback_path": "res://resources/models/levels/tiles_default/meshes/Tiles_Tile_EWN_Mesh.res",
+"save_to_file/path": "uid://c7ulbqybhgk3f"
+},
+"Tiles_Tile_EW_Mesh": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 60.0,
+"save_to_file/enabled": true,
+"save_to_file/fallback_path": "res://resources/models/levels/tiles_default/meshes/Tiles_Tile_EW_Mesh.res",
+"save_to_file/path": "uid://b2wqdliwybn51"
+},
+"Tiles_Tile_E_Mesh": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 60.0,
+"save_to_file/enabled": true,
+"save_to_file/fallback_path": "res://resources/models/levels/tiles_default/meshes/Tiles_Tile_E_Mesh.res",
+"save_to_file/path": "uid://31ef8dd8aivq"
+},
+"Tiles_Tile_N_Mesh": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 60.0,
+"save_to_file/enabled": true,
+"save_to_file/fallback_path": "res://resources/models/levels/tiles_default/meshes/Tiles_Tile_N_Mesh.res",
+"save_to_file/path": "uid://droav2ugq03lb"
+},
+"Tiles_Tile_SN_Mesh": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 60.0,
+"save_to_file/enabled": true,
+"save_to_file/fallback_path": "res://resources/models/levels/tiles_default/meshes/Tiles_Tile_SN_Mesh.res",
+"save_to_file/path": "uid://nd4qlkpn0ctk"
+},
+"Tiles_Tile_SWN_Mesh": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 60.0,
+"save_to_file/enabled": true,
+"save_to_file/fallback_path": "res://resources/models/levels/tiles_default/meshes/Tiles_Tile_SWN_Mesh.res",
+"save_to_file/path": "uid://ddrsol40sc546"
+},
+"Tiles_Tile_SW_Mesh": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 60.0,
+"save_to_file/enabled": true,
+"save_to_file/fallback_path": "res://resources/models/levels/tiles_default/meshes/Tiles_Tile_SW_Mesh.res",
+"save_to_file/path": "uid://taedoyydetnf"
+},
+"Tiles_Tile_S_Mesh": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 60.0,
+"save_to_file/enabled": true,
+"save_to_file/fallback_path": "res://resources/models/levels/tiles_default/meshes/Tiles_Tile_S_Mesh.res",
+"save_to_file/path": "uid://b5be7830o8cno"
+},
+"Tiles_Tile_WN_Mesh": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 60.0,
+"save_to_file/enabled": true,
+"save_to_file/fallback_path": "res://resources/models/levels/tiles_default/meshes/Tiles_Tile_WN_Mesh.res",
+"save_to_file/path": "uid://cmyfftpatherx"
+},
+"Tiles_Tile_W_Mesh": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 60.0,
+"save_to_file/enabled": true,
+"save_to_file/fallback_path": "res://resources/models/levels/tiles_default/meshes/Tiles_Tile_W_Mesh.res",
+"save_to_file/path": "uid://b7g8usg270cdd"
+}
+}
+}
+gltf/naming_version=1
+gltf/embedded_image_handling=1

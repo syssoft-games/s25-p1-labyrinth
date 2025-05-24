@@ -1,0 +1,99 @@
+[gd_scene load_steps=13 format=3 uid="uid://bj17hl5840dts"]
+
+[ext_resource type="Script" uid="uid://qgqa4qosrcqp" path="res://scripts/game/player/Player3D.cs" id="1_bb7ep"]
+[ext_resource type="Resource" uid="uid://eyrxbtdjgepn" path="res://resources/components/inventory_component.tres" id="2_afcav"]
+[ext_resource type="Script" uid="uid://ljbase8grra" path="res://scripts/game/abilties/Player3dMovementAbility.cs" id="3_48fsr"]
+[ext_resource type="Script" uid="uid://cdm5qliv7wstl" path="res://scripts/game/abilties/Player3dLookAroundAbility.cs" id="4_plnn8"]
+[ext_resource type="Script" uid="uid://hnu7gm56cemp" path="res://scripts/game/abilties/Player3dInteractAbility.cs" id="5_0m8qm"]
+[ext_resource type="Script" uid="uid://bf2p5ob8vdi2h" path="res://scripts/game/abilties/Player3dPauseAbility.cs" id="6_u7ws2"]
+[ext_resource type="Script" uid="uid://cgxo1n1jnf0tl" path="res://scripts/game/abilties/Player3dInventoryNextSlotAbility.cs" id="7_opger"]
+[ext_resource type="Script" uid="uid://rrbghxwbxs4m" path="res://scripts/game/abilties/Player3dInventoryPreviousSlotAbility.cs" id="8_50bmb"]
+[ext_resource type="Script" uid="uid://y357b2hvl71a" path="res://scripts/game/abilties/Player3dRayCastAbility.cs" id="9_afcav"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_rurhu"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_kk2rg"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_b5spy"]
+size = Vector3(0.685, 0.345, 0.28)
+
+[node name="Player3D" type="CharacterBody3D" node_paths=PackedStringArray("PlayerAbilities", "Camera")]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 0, 0, 0)
+script = ExtResource("1_bb7ep")
+PlayerAbilities = [NodePath("Player3dMovementAbility"), NodePath("Player3dLookAroundAbility"), NodePath("Player3dInteractAbility"), NodePath("Player3dPauseAbility"), NodePath("Player3dInventoryNextSlotAbility"), NodePath("Player3dInventoryPreviousSlotAbility")]
+Components = Array[Resource]([ExtResource("2_afcav")])
+Camera = NodePath("Camera3D")
+metadata/_custom_type_script = "uid://qgqa4qosrcqp"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+shape = SubResource("CapsuleShape3D_rurhu")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+mesh = SubResource("CapsuleMesh_kk2rg")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="MeshInstance3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.434076, -0.397271)
+mesh = SubResource("BoxMesh_b5spy")
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.45256, -0.565823)
+current = true
+
+[node name="SpotLight3D" type="SpotLight3D" parent="Camera3D"]
+light_energy = 5.0
+spot_range = 20.0
+spot_angle = 24.0
+
+[node name="RayCast3D" type="RayCast3D" parent="Camera3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.1077e-09, 0, -0.0469866)
+target_position = Vector3(0, 0, -2)
+
+[node name="Player3dMovementAbility" type="Node" parent="." node_paths=PackedStringArray("AbilityOwner")]
+script = ExtResource("3_48fsr")
+AbilityOwner = NodePath("..")
+InputActionNames = Array[String](["player_move_left", "player_move_right", "player_move_forward", "player_move_backward"])
+metadata/_custom_type_script = "uid://ljbase8grra"
+
+[node name="Player3dLookAroundAbility" type="Node" parent="." node_paths=PackedStringArray("AbilityOwner")]
+script = ExtResource("4_plnn8")
+ActionRotationSpeed = 25.0
+AbilityOwner = NodePath("..")
+InputActionNames = Array[String](["player_look_left", "player_look_right", "player_look_up", "player_look_down"])
+TriggersOnPressed = true
+metadata/_custom_type_script = "uid://cdm5qliv7wstl"
+
+[node name="Player3dInteractAbility" type="Node" parent="." node_paths=PackedStringArray("AbilityOwner")]
+script = ExtResource("5_0m8qm")
+AbilityOwner = NodePath("..")
+InputActionNames = Array[String](["player_interact"])
+TriggersOnJustReleased = false
+metadata/_custom_type_script = "uid://hnu7gm56cemp"
+
+[node name="Player3dPauseAbility" type="Node" parent="." node_paths=PackedStringArray("AbilityOwner")]
+process_mode = 3
+script = ExtResource("6_u7ws2")
+AbilityOwner = NodePath("..")
+InputActionNames = Array[String](["game_pause"])
+TriggersOnJustReleased = false
+metadata/_custom_type_script = "uid://bf2p5ob8vdi2h"
+
+[node name="Player3dInventoryNextSlotAbility" type="Node" parent="." node_paths=PackedStringArray("AbilityOwner")]
+script = ExtResource("7_opger")
+AbilityOwner = NodePath("..")
+InputActionNames = Array[String](["player_inventory_slot_next"])
+TriggersOnJustReleased = false
+metadata/_custom_type_script = "uid://cgxo1n1jnf0tl"
+
+[node name="Player3dInventoryPreviousSlotAbility" type="Node" parent="." node_paths=PackedStringArray("AbilityOwner")]
+script = ExtResource("8_50bmb")
+AbilityOwner = NodePath("..")
+InputActionNames = Array[String](["player_inventory_slot_previous"])
+TriggersOnJustReleased = false
+metadata/_custom_type_script = "uid://rrbghxwbxs4m"
+
+[node name="Player3dRayCastAbility" type="Node" parent="." node_paths=PackedStringArray("AbilityOwner")]
+script = ExtResource("9_afcav")
+AbilityOwner = NodePath("..")
+metadata/_custom_type_script = "uid://y357b2hvl71a"

@@ -1,0 +1,39 @@
+[gd_resource type="Resource" script_class="LevelTileSet" load_steps=17 format=3 uid="uid://b6n3r77s2bw1c"]
+
+[ext_resource type="Script" uid="uid://41sj60qxs6fb" path="res://scripts/game/level/LevelTileSet.cs" id="1_4qiuv"]
+[ext_resource type="ArrayMesh" uid="uid://31ef8dd8aivq" path="res://resources/models/levels/tiles_default/meshes/Tiles_Tile_E_Mesh.res" id="1_sd4eg"]
+[ext_resource type="ArrayMesh" uid="uid://b5be7830o8cno" path="res://resources/models/levels/tiles_default/meshes/Tiles_Tile_S_Mesh.res" id="2_8gy7n"]
+[ext_resource type="ArrayMesh" uid="uid://b7g8usg270cdd" path="res://resources/models/levels/tiles_default/meshes/Tiles_Tile_W_Mesh.res" id="3_rdape"]
+[ext_resource type="ArrayMesh" uid="uid://droav2ugq03lb" path="res://resources/models/levels/tiles_default/meshes/Tiles_Tile_N_Mesh.res" id="4_hsgvm"]
+[ext_resource type="ArrayMesh" uid="uid://btp6w2dc6od71" path="res://resources/models/levels/tiles_default/meshes/Tiles_Tile_ES_Mesh.res" id="5_pt4hs"]
+[ext_resource type="ArrayMesh" uid="uid://b2wqdliwybn51" path="res://resources/models/levels/tiles_default/meshes/Tiles_Tile_EW_Mesh.res" id="6_n63qc"]
+[ext_resource type="ArrayMesh" uid="uid://bvwyjvjns5agn" path="res://resources/models/levels/tiles_default/meshes/Tiles_Tile_EN_Mesh.res" id="7_vgiu4"]
+[ext_resource type="ArrayMesh" uid="uid://taedoyydetnf" path="res://resources/models/levels/tiles_default/meshes/Tiles_Tile_SW_Mesh.res" id="8_lrp7i"]
+[ext_resource type="ArrayMesh" uid="uid://nd4qlkpn0ctk" path="res://resources/models/levels/tiles_default/meshes/Tiles_Tile_SN_Mesh.res" id="9_8sxyk"]
+[ext_resource type="ArrayMesh" uid="uid://cmyfftpatherx" path="res://resources/models/levels/tiles_default/meshes/Tiles_Tile_WN_Mesh.res" id="10_aoxmq"]
+[ext_resource type="ArrayMesh" uid="uid://wxecfm5k2uxq" path="res://resources/models/levels/tiles_default/meshes/Tiles_Tile_ESW_Mesh.res" id="11_spi66"]
+[ext_resource type="ArrayMesh" uid="uid://hx23tbk40blv" path="res://resources/models/levels/tiles_default/meshes/Tiles_Tile_ESN_Mesh.res" id="12_2lvmf"]
+[ext_resource type="ArrayMesh" uid="uid://c7ulbqybhgk3f" path="res://resources/models/levels/tiles_default/meshes/Tiles_Tile_EWN_Mesh.res" id="13_udfwu"]
+[ext_resource type="ArrayMesh" uid="uid://ddrsol40sc546" path="res://resources/models/levels/tiles_default/meshes/Tiles_Tile_SWN_Mesh.res" id="14_f55xo"]
+[ext_resource type="ArrayMesh" uid="uid://cbxq6bblek35i" path="res://resources/models/levels/tiles_default/meshes/Tiles_Tile_ESWN_Mesh.res" id="15_ew8hv"]
+
+[resource]
+script = ExtResource("1_4qiuv")
+TileMeshes = Dictionary[String, Mesh]({
+"E": ExtResource("1_sd4eg"),
+"EN": ExtResource("7_vgiu4"),
+"ES": ExtResource("5_pt4hs"),
+"ESN": ExtResource("12_2lvmf"),
+"ESW": ExtResource("11_spi66"),
+"ESWN": ExtResource("15_ew8hv"),
+"EW": ExtResource("6_n63qc"),
+"EWN": ExtResource("13_udfwu"),
+"N": ExtResource("4_hsgvm"),
+"S": ExtResource("2_8gy7n"),
+"SN": ExtResource("9_8sxyk"),
+"SW": ExtResource("8_lrp7i"),
+"SWN": ExtResource("14_f55xo"),
+"W": ExtResource("3_rdape"),
+"WN": ExtResource("10_aoxmq")
+})
+metadata/_custom_type_script = "uid://41sj60qxs6fb"

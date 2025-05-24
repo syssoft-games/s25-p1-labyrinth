@@ -1,0 +1,40 @@
+[remap]
+
+importer="texture"
+type="CompressedTexture2D"
+uid="uid://b44hu8l567qdr"
+path.s3tc="res://.godot/imported/Tiles_stone_ground_07_normal.jpg-02be9a23b2539584d341bdc724e64bb6.s3tc.ctex"
+metadata={
+"imported_formats": ["s3tc_bptc"],
+"vram_texture": true
+}
+generator_parameters={
+"md5": "1ded832952e3506303a09ed3f6bee60f"
+}
+
+[deps]
+
+source_file="res://resources/models/levels/tiles_default/Tiles_stone_ground_07_normal.jpg"
+dest_files=["res://.godot/imported/Tiles_stone_ground_07_normal.jpg-02be9a23b2539584d341bdc724e64bb6.s3tc.ctex"]
+
+[params]
+
+compress/mode=2
+compress/high_quality=false
+compress/lossy_quality=0.7
+compress/uastc_level=0
+compress/rdo_quality_loss=0.0
+compress/hdr_compression=1
+compress/normal_map=1
+compress/channel_pack=0
+mipmaps/generate=true
+mipmaps/limit=-1
+roughness/mode=1
+roughness/src_normal="res://resources/models/levels/tiles_default/Tiles_stone_ground_07_normal.jpg"
+process/fix_alpha_border=true
+process/premult_alpha=false
+process/normal_map_invert_y=false
+process/hdr_as_srgb=false
+process/hdr_clamp_exposure=false
+process/size_limit=0
+detect_3d/compress_to=0

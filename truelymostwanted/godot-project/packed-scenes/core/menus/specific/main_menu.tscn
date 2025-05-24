@@ -1,0 +1,48 @@
+[gd_scene load_steps=3 format=3 uid="uid://hvmivga6xqxh"]
+
+[ext_resource type="PackedScene" uid="uid://bxxx4vmewps02" path="res://packed-scenes/core/menus/menu.tscn" id="1_s4ex4"]
+[ext_resource type="Texture2D" uid="uid://bw5le4feaxt6j" path="res://resources/textures/logo.png" id="2_e8ykj"]
+
+[node name="Main" instance=ExtResource("1_s4ex4")]
+
+[node name="MenuNavButton" parent="Control/VBoxContainer" index="0" node_paths=PackedStringArray("Functions")]
+TargetMenuName = "Setup"
+Functions = []
+
+[node name="MenuNavButton2" parent="Control/VBoxContainer" index="1" node_paths=PackedStringArray("Functions")]
+visible = false
+text = "Help"
+TargetMenuName = "Tutorial"
+Functions = []
+
+[node name="MenuNavButton3" parent="Control/VBoxContainer" index="2" node_paths=PackedStringArray("Functions")]
+visible = false
+text = "Options"
+TargetMenuName = "Options"
+Functions = []
+
+[node name="MenuNavButton4" parent="Control/VBoxContainer" index="3" node_paths=PackedStringArray("Functions")]
+visible = false
+text = "Credits"
+TargetMenuName = "Credits"
+Functions = []
+
+[node name="MenuNavButton5" parent="Control/VBoxContainer" index="4" node_paths=PackedStringArray("Functions")]
+TargetMenuName = "Quit"
+Functions = []
+
+[node name="Logo" type="Sprite2D" parent="." index="1"]
+position = Vector2(261, 163)
+scale = Vector2(0.64023, 0.64023)
+texture = ExtResource("2_e8ykj")
+
+[node name="Label" type="Label" parent="." index="2"]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -23.0
+offset_right = 252.0
+grow_vertical = 0
+text = "Version 0.1"
+vertical_alignment = 1

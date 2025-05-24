@@ -1,0 +1,39 @@
+[gd_resource type="Resource" script_class="LevelTileSet" load_steps=17 format=3 uid="uid://etfpjqc00co7"]
+
+[ext_resource type="ArrayMesh" uid="uid://bkwe15tkbdppu" path="res://resources/models/levels/tiles_glas/meshes/Tiles_GlasTile_E_Mesh.res" id="1_f2vtx"]
+[ext_resource type="ArrayMesh" uid="uid://jx8ghhf40kvn" path="res://resources/models/levels/tiles_glas/meshes/Tiles_GlasTile_S_Mesh.res" id="2_gy8vr"]
+[ext_resource type="ArrayMesh" uid="uid://d2x7sutyhf8kd" path="res://resources/models/levels/tiles_glas/meshes/Tiles_GlasTile_W_Mesh.res" id="3_bue0a"]
+[ext_resource type="ArrayMesh" uid="uid://ukyi3jqtn1nm" path="res://resources/models/levels/tiles_glas/meshes/Tiles_GlasTile_N_Mesh.res" id="4_tpw6b"]
+[ext_resource type="ArrayMesh" uid="uid://dy6jbeeg1y5tn" path="res://resources/models/levels/tiles_glas/meshes/Tiles_GlasTile_ES_Mesh.res" id="5_x2pq8"]
+[ext_resource type="ArrayMesh" uid="uid://dxb1450ty65b5" path="res://resources/models/levels/tiles_glas/meshes/Tiles_GlasTile_EW_Mesh.res" id="6_4qgpn"]
+[ext_resource type="ArrayMesh" uid="uid://medb45rh6p6n" path="res://resources/models/levels/tiles_glas/meshes/Tiles_GlasTile_EN_Mesh.res" id="7_t3wy0"]
+[ext_resource type="ArrayMesh" uid="uid://bek27nnsgken6" path="res://resources/models/levels/tiles_glas/meshes/Tiles_GlasTile_SW_Mesh.res" id="8_ry3xr"]
+[ext_resource type="ArrayMesh" uid="uid://du4ovq017hsft" path="res://resources/models/levels/tiles_glas/meshes/Tiles_GlasTile_SN_Mesh.res" id="9_8sfd2"]
+[ext_resource type="ArrayMesh" uid="uid://c0iyk26ib1v21" path="res://resources/models/levels/tiles_glas/meshes/Tiles_GlasTile_WN_Mesh.res" id="10_qhr42"]
+[ext_resource type="ArrayMesh" uid="uid://ddojbswgaakte" path="res://resources/models/levels/tiles_glas/meshes/Tiles_GlasTile_ESW_Mesh.res" id="11_v3ywm"]
+[ext_resource type="ArrayMesh" uid="uid://bw7ggcwuhl5pu" path="res://resources/models/levels/tiles_glas/meshes/Tiles_GlasTile_ESN_Mesh.res" id="12_l1i38"]
+[ext_resource type="ArrayMesh" uid="uid://c0c0wq348t3ey" path="res://resources/models/levels/tiles_glas/meshes/Tiles_GlasTile_EWN_Mesh.res" id="13_cmani"]
+[ext_resource type="ArrayMesh" uid="uid://cvwf8dcsflv1s" path="res://resources/models/levels/tiles_glas/meshes/Tiles_GlasTile_SWN_Mesh.res" id="14_7t301"]
+[ext_resource type="ArrayMesh" uid="uid://oe6ltltanx4k" path="res://resources/models/levels/tiles_glas/meshes/Tiles_GlasTile_ESWN_Mesh.res" id="15_d2xh4"]
+[ext_resource type="Script" uid="uid://41sj60qxs6fb" path="res://scripts/game/level/LevelTileSet.cs" id="16_4cr12"]
+
+[resource]
+script = ExtResource("16_4cr12")
+TileMeshes = Dictionary[String, Mesh]({
+"E": ExtResource("1_f2vtx"),
+"EN": ExtResource("7_t3wy0"),
+"ES": ExtResource("5_x2pq8"),
+"ESN": ExtResource("12_l1i38"),
+"ESW": ExtResource("11_v3ywm"),
+"ESWN": ExtResource("15_d2xh4"),
+"EW": ExtResource("6_4qgpn"),
+"EWN": ExtResource("13_cmani"),
+"N": ExtResource("4_tpw6b"),
+"S": ExtResource("2_gy8vr"),
+"SN": ExtResource("9_8sfd2"),
+"SW": ExtResource("8_ry3xr"),
+"SWN": ExtResource("14_7t301"),
+"W": ExtResource("3_bue0a"),
+"WN": ExtResource("10_qhr42")
+})
+metadata/_custom_type_script = "uid://41sj60qxs6fb"

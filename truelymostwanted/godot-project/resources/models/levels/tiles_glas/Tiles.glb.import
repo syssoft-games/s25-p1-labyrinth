@@ -1,0 +1,188 @@
+[remap]
+
+importer="scene"
+importer_version=1
+type="PackedScene"
+uid="uid://duch6jcj6e1e7"
+path="res://.godot/imported/Tiles.glb-ddbc3b03e78342a29060c7207610f085.scn"
+
+[deps]
+
+source_file="res://resources/models/levels/tiles_glas/Tiles.glb"
+dest_files=["res://.godot/imported/Tiles.glb-ddbc3b03e78342a29060c7207610f085.scn"]
+
+[params]
+
+nodes/root_type=""
+nodes/root_name=""
+nodes/apply_root_scale=true
+nodes/root_scale=1.0
+nodes/import_as_skeleton_bones=false
+nodes/use_name_suffixes=true
+nodes/use_node_type_suffixes=true
+meshes/ensure_tangents=true
+meshes/generate_lods=true
+meshes/create_shadow_meshes=true
+meshes/light_baking=1
+meshes/lightmap_texel_size=0.2
+meshes/force_disable_compression=false
+skins/use_named_skins=true
+animation/import=true
+animation/fps=30
+animation/trimming=false
+animation/remove_immutable_tracks=true
+animation/import_rest_as_RESET=false
+import_script/path=""
+_subresources={
+"materials": {
+"Stone Ground": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://resources/models/levels/tiles_glas/materials/Stone Ground.tres",
+"use_external/path": "uid://dq1mxr4pol1ox"
+},
+"Window": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://resources/models/levels/tiles_glas/materials/Window.tres",
+"use_external/path": "uid://cp3kqvljyyp2n"
+}
+},
+"meshes": {
+"Tiles_GlasTile_EN_Mesh": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 60.0,
+"save_to_file/enabled": true,
+"save_to_file/fallback_path": "res://resources/models/levels/tiles_glas/meshes/Tiles_GlasTile_EN_Mesh.res",
+"save_to_file/path": "uid://b8r4gyoggyonx"
+},
+"Tiles_GlasTile_ESN_Mesh": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 60.0,
+"save_to_file/enabled": true,
+"save_to_file/fallback_path": "res://resources/models/levels/tiles_glas/meshes/Tiles_GlasTile_ESN_Mesh.res",
+"save_to_file/path": "uid://cx4vkkdm8gvrn"
+},
+"Tiles_GlasTile_ESWN_Mesh": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 60.0,
+"save_to_file/enabled": true,
+"save_to_file/fallback_path": "res://resources/models/levels/tiles_glas/meshes/Tiles_GlasTile_ESWN_Mesh.res",
+"save_to_file/path": "uid://di8qt7xtmdcul"
+},
+"Tiles_GlasTile_ESW_Mesh": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 60.0,
+"save_to_file/enabled": true,
+"save_to_file/fallback_path": "res://resources/models/levels/tiles_glas/meshes/Tiles_GlasTile_ESW_Mesh.res",
+"save_to_file/path": "uid://dfewi8uppwld4"
+},
+"Tiles_GlasTile_ES_Mesh": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 60.0,
+"save_to_file/enabled": true,
+"save_to_file/fallback_path": "res://resources/models/levels/tiles_glas/meshes/Tiles_GlasTile_ES_Mesh.res",
+"save_to_file/path": "uid://cs1rk78j7abi3"
+},
+"Tiles_GlasTile_EWN_Mesh": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 60.0,
+"save_to_file/enabled": true,
+"save_to_file/fallback_path": "res://resources/models/levels/tiles_glas/meshes/Tiles_GlasTile_EWN_Mesh.res",
+"save_to_file/path": "uid://be6ta6h5nt6pt"
+},
+"Tiles_GlasTile_EW_Mesh": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 60.0,
+"save_to_file/enabled": true,
+"save_to_file/fallback_path": "res://resources/models/levels/tiles_glas/meshes/Tiles_GlasTile_EW_Mesh.res",
+"save_to_file/path": "uid://cfwh23m688nbs"
+},
+"Tiles_GlasTile_E_Mesh": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 60.0,
+"save_to_file/enabled": true,
+"save_to_file/fallback_path": "res://resources/models/levels/tiles_glas/meshes/Tiles_GlasTile_E_Mesh.res",
+"save_to_file/path": "uid://bo7yfihn0k5ki"
+},
+"Tiles_GlasTile_N_Mesh": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 60.0,
+"save_to_file/enabled": true,
+"save_to_file/fallback_path": "res://resources/models/levels/tiles_glas/meshes/Tiles_GlasTile_N_Mesh.res",
+"save_to_file/path": "uid://tbufvuuy1ex1"
+},
+"Tiles_GlasTile_SN_Mesh": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 60.0,
+"save_to_file/enabled": true,
+"save_to_file/fallback_path": "res://resources/models/levels/tiles_glas/meshes/Tiles_GlasTile_SN_Mesh.res",
+"save_to_file/path": "uid://cx6cqsvxcoe1n"
+},
+"Tiles_GlasTile_SWN_Mesh": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 60.0,
+"save_to_file/enabled": true,
+"save_to_file/fallback_path": "res://resources/models/levels/tiles_glas/meshes/Tiles_GlasTile_SWN_Mesh.res",
+"save_to_file/path": "uid://doxaub32kd1bo"
+},
+"Tiles_GlasTile_SW_Mesh": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 60.0,
+"save_to_file/enabled": true,
+"save_to_file/fallback_path": "res://resources/models/levels/tiles_glas/meshes/Tiles_GlasTile_SW_Mesh.res",
+"save_to_file/path": "uid://dbux7bkdusqmn"
+},
+"Tiles_GlasTile_S_Mesh": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 60.0,
+"save_to_file/enabled": true,
+"save_to_file/fallback_path": "res://resources/models/levels/tiles_glas/meshes/Tiles_GlasTile_S_Mesh.res",
+"save_to_file/path": "uid://3wctoyfc4me7"
+},
+"Tiles_GlasTile_WN_Mesh": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 60.0,
+"save_to_file/enabled": true,
+"save_to_file/fallback_path": "res://resources/models/levels/tiles_glas/meshes/Tiles_GlasTile_WN_Mesh.res",
+"save_to_file/path": "uid://8dlu8ag6h1vq"
+},
+"Tiles_GlasTile_W_Mesh": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 60.0,
+"save_to_file/enabled": true,
+"save_to_file/fallback_path": "res://resources/models/levels/tiles_glas/meshes/Tiles_GlasTile_W_Mesh.res",
+"save_to_file/path": "uid://yrsdf3ev56mw"
+}
+}
+}
+gltf/naming_version=1
+gltf/embedded_image_handling=1

@@ -1,0 +1,46 @@
+[gd_scene load_steps=5 format=3 uid="uid://bfwvu6qkkusc4"]
+
+[ext_resource type="PackedScene" uid="uid://bxxx4vmewps02" path="res://packed-scenes/core/menus/menu.tscn" id="1_typtd"]
+[ext_resource type="Script" uid="uid://dtksg8t77esep" path="res://scripts/core/functions/ContinueGameFunction.cs" id="2_dk837"]
+[ext_resource type="Script" uid="uid://csa5rqixk8mpt" path="res://scripts/game/functions/DestroyLevelFunction.cs" id="3_dk837"]
+[ext_resource type="Script" uid="uid://dq1awig02xr48" path="res://scripts/game/functions/EnableGameUiFunction.cs" id="3_evcpv"]
+
+[node name="Pause" instance=ExtResource("1_typtd")]
+
+[node name="MenuNavButton" parent="Control/VBoxContainer" index="0" node_paths=PackedStringArray("Functions")]
+visible = false
+Functions = []
+
+[node name="MenuNavButton2" parent="Control/VBoxContainer" index="1" node_paths=PackedStringArray("Functions")]
+text = "Continue"
+TargetMenuName = "Pause"
+TargetVisibility = false
+Functions = [NodePath("ContinueGameFunction"), NodePath("EnableGameUiFunction")]
+
+[node name="ContinueGameFunction" type="Node" parent="Control/VBoxContainer/MenuNavButton2" index="1"]
+script = ExtResource("2_dk837")
+metadata/_custom_type_script = "uid://dtksg8t77esep"
+
+[node name="EnableGameUiFunction" type="Node" parent="Control/VBoxContainer/MenuNavButton2" index="2"]
+script = ExtResource("3_evcpv")
+metadata/_custom_type_script = "uid://dq1awig02xr48"
+
+[node name="MenuNavButton3" parent="Control/VBoxContainer" index="2" node_paths=PackedStringArray("Functions")]
+visible = false
+text = "Options"
+TargetMenuName = "Options"
+Functions = []
+
+[node name="MenuNavButton4" parent="Control/VBoxContainer" index="3" node_paths=PackedStringArray("Functions")]
+text = "Main Menu"
+TargetMenuName = "Main"
+Functions = [NodePath("DestroyLevelFunction")]
+
+[node name="DestroyLevelFunction" type="Node" parent="Control/VBoxContainer/MenuNavButton4" index="1"]
+script = ExtResource("3_dk837")
+metadata/_custom_type_script = "uid://csa5rqixk8mpt"
+
+[node name="MenuNavButton5" parent="Control/VBoxContainer" index="4" node_paths=PackedStringArray("Functions")]
+text = "Quit Game"
+TargetMenuName = "Quit"
+Functions = []

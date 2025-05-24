@@ -1,0 +1,32 @@
+[gd_scene load_steps=4 format=3 uid="uid://bm5neck5w1m7v"]
+
+[ext_resource type="Script" uid="uid://dbd5j22k45if0" path="res://scripts/core/menus/MenuNavButton.cs" id="1_t1fgf"]
+[ext_resource type="Texture2D" uid="uid://bta46sjflics" path="res://resources/textures/gui_menu_nav_button_frame.png" id="2_p3e34"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_jatpd"]
+texture = ExtResource("2_p3e34")
+
+[node name="MenuNavButton" type="Button"]
+custom_minimum_size = Vector2(400, 70)
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 52.0
+offset_top = -388.0
+offset_right = 452.0
+offset_bottom = -318.0
+grow_vertical = 0
+theme_override_font_sizes/font_size = 25
+script = ExtResource("1_t1fgf")
+metadata/_custom_type_script = "uid://dbd5j22k45if0"
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+mouse_behavior_recursive = 1
+theme_override_styles/panel = SubResource("StyleBoxTexture_jatpd")

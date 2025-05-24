@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="LevelTileSetDictionary" load_steps=5 format=3 uid="uid://dnr3w6o8emb3t"]
+
+[ext_resource type="Script" uid="uid://41sj60qxs6fb" path="res://scripts/game/level/LevelTileSet.cs" id="1_ppnj8"]
+[ext_resource type="Resource" uid="uid://b6n3r77s2bw1c" path="res://resources/level_tiles/default_level_tile_set.tres" id="2_a1v7f"]
+[ext_resource type="Script" uid="uid://dtd2j6b6x1wrk" path="res://scripts/game/level/LevelTileSetDictionary.cs" id="2_qqbc4"]
+[ext_resource type="Resource" uid="uid://etfpjqc00co7" path="res://resources/level_tiles/glas_level_tile_set.tres" id="3_lttoq"]
+
+[resource]
+script = ExtResource("2_qqbc4")
+LevelTileSets = Dictionary[String, ExtResource("1_ppnj8")]({
+"default": ExtResource("2_a1v7f"),
+"glas": ExtResource("3_lttoq")
+})
+metadata/_custom_type_script = "uid://dtd2j6b6x1wrk"

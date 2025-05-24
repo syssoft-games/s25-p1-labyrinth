@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="ItemData" load_steps=3 format=3 uid="uid://by6cp7pfpsqlk"]
+
+[ext_resource type="Script" uid="uid://dmgifsat6urew" path="res://scripts/game/items/ItemData.cs" id="1_fhl55"]
+[ext_resource type="Texture2D" uid="uid://bcnb61t2ql7vn" path="res://resources/items/tex_orb.png" id="1_moxi3"]
+
+[resource]
+script = ExtResource("1_fhl55")
+Id = 0
+Name = "Mana Orb"
+Description = "A magic orb? What does it do???"
+Value = 0
+MaxStackSize = 64
+Icon = ExtResource("1_moxi3")
+metadata/_custom_type_script = "uid://dmgifsat6urew"

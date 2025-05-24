@@ -1,0 +1,88 @@
+[gd_scene load_steps=5 format=3 uid="uid://diw5fjea1jxmm"]
+
+[ext_resource type="Script" uid="uid://b4cu100vx18j2" path="res://scripts/game/gui/GameUI.cs" id="1_6dtvq"]
+[ext_resource type="Script" uid="uid://b4lttqamuut22" path="res://scripts/game/gui/TimeLabel.cs" id="2_qiyac"]
+[ext_resource type="PackedScene" uid="uid://dfk7x2br15qww" path="res://packed-scenes/game/gui/inventory_slot_panel.tscn" id="3_kus5p"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_77hjl"]
+content_margin_left = 0.0
+content_margin_top = 0.0
+content_margin_right = 0.0
+content_margin_bottom = 0.0
+bg_color = Color(0.1, 0.1, 0.1, 0)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+corner_detail = 5
+
+[node name="GameUI" type="Panel"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_77hjl")
+script = ExtResource("1_6dtvq")
+
+[node name="TimeLabel" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -187.0
+offset_bottom = 45.0
+grow_horizontal = 0
+theme_override_font_sizes/font_size = 32
+text = "Day 1, 00:00"
+horizontal_alignment = 2
+vertical_alignment = 1
+script = ExtResource("2_qiyac")
+metadata/_custom_type_script = "uid://b4lttqamuut22"
+
+[node name="Inventory_HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 0
+offset_left = 427.0
+offset_top = 952.0
+offset_right = 1463.0
+offset_bottom = 1052.0
+
+[node name="InventorySlotPanel1" parent="Inventory_HBoxContainer" instance=ExtResource("3_kus5p")]
+layout_mode = 2
+
+[node name="InventorySlotPanel2" parent="Inventory_HBoxContainer" instance=ExtResource("3_kus5p")]
+layout_mode = 2
+SlotID = 1
+
+[node name="InventorySlotPanel3" parent="Inventory_HBoxContainer" instance=ExtResource("3_kus5p")]
+layout_mode = 2
+SlotID = 2
+
+[node name="InventorySlotPanel4" parent="Inventory_HBoxContainer" instance=ExtResource("3_kus5p")]
+layout_mode = 2
+SlotID = 3
+
+[node name="InventorySlotPanel5" parent="Inventory_HBoxContainer" instance=ExtResource("3_kus5p")]
+layout_mode = 2
+SlotID = 4
+
+[node name="InventorySlotPanel6" parent="Inventory_HBoxContainer" instance=ExtResource("3_kus5p")]
+layout_mode = 2
+SlotID = 5
+
+[node name="InventorySlotPanel7" parent="Inventory_HBoxContainer" instance=ExtResource("3_kus5p")]
+layout_mode = 2
+SlotID = 6
+
+[node name="InventorySlotPanel8" parent="Inventory_HBoxContainer" instance=ExtResource("3_kus5p")]
+layout_mode = 2
+SlotID = 7
+
+[node name="InventorySlotPanel9" parent="Inventory_HBoxContainer" instance=ExtResource("3_kus5p")]
+layout_mode = 2
+SlotID = 8
+
+[node name="InventorySlotPanel10" parent="Inventory_HBoxContainer" instance=ExtResource("3_kus5p")]
+layout_mode = 2
+SlotID = 9

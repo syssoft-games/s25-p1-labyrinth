@@ -1,0 +1,60 @@
+[gd_scene load_steps=8 format=3 uid="uid://dfk7x2br15qww"]
+
+[ext_resource type="Texture2D" uid="uid://hw5smdsgcyn2" path="res://resources/textures/gui_inventory_slot.png" id="1_8klue"]
+[ext_resource type="Script" uid="uid://cgjatsrixxpb" path="res://scripts/game/gui/InventorySlotPanel.cs" id="2_uv6dj"]
+[ext_resource type="Resource" uid="uid://b66d2hw7i5t37" path="res://resources/inventory/player_inventory.tres" id="3_jpcuc"]
+[ext_resource type="Texture2D" uid="uid://s7b5iykktuwh" path="res://resources/textures/gui_inventory_slot_highlighted.png" id="4_m8vbo"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_rw4oa"]
+texture = ExtResource("1_8klue")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_r47aq"]
+texture = ExtResource("4_m8vbo")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_6irsn"]
+
+[node name="InventorySlotPanel" type="Panel" node_paths=PackedStringArray("HighlightedPanel", "IconPanel", "AmountLabel")]
+custom_minimum_size = Vector2(100, 100)
+offset_right = 40.0
+offset_bottom = 40.0
+theme_override_styles/panel = SubResource("StyleBoxTexture_rw4oa")
+script = ExtResource("2_uv6dj")
+Inventory = ExtResource("3_jpcuc")
+HighlightedPanel = NodePath("HightlightedPanel")
+IconPanel = NodePath("IconPanel")
+AmountLabel = NodePath("AmountLabel")
+metadata/_custom_type_script = "uid://cgjatsrixxpb"
+
+[node name="HightlightedPanel" type="Panel" parent="."]
+self_modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_r47aq")
+
+[node name="IconPanel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_6irsn")
+
+[node name="AmountLabel" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -66.0
+offset_top = -45.0
+offset_right = -8.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_font_sizes/font_size = 32
+horizontal_alignment = 2

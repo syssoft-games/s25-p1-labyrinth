@@ -1,0 +1,21 @@
+[gd_scene load_steps=2 format=3 uid="uid://cd04sjth30joj"]
+
+[ext_resource type="PackedScene" uid="uid://bxxx4vmewps02" path="res://packed-scenes/core/menus/menu.tscn" id="1_ur71e"]
+
+[node name="Tutorial" instance=ExtResource("1_ur71e")]
+
+[node name="MenuNavButton" parent="Control/VBoxContainer" index="0"]
+visible = false
+
+[node name="MenuNavButton2" parent="Control/VBoxContainer" index="1"]
+visible = false
+
+[node name="MenuNavButton3" parent="Control/VBoxContainer" index="2"]
+visible = false
+
+[node name="MenuNavButton4" parent="Control/VBoxContainer" index="3"]
+visible = false
+
+[node name="MenuNavButton5" parent="Control/VBoxContainer" index="4"]
+text = "Back"
+TargetMenuName = "Main"

@@ -1,0 +1,61 @@
+[gd_scene load_steps=5 format=3 uid="uid://bxxx4vmewps02"]
+
+[ext_resource type="Script" uid="uid://b0mn584c600w0" path="res://scripts/core/menus/Menu.cs" id="1_4lebm"]
+[ext_resource type="Texture2D" uid="uid://bsywwsvcw187s" path="res://resources/textures/menu_frame.png" id="1_ugqif"]
+[ext_resource type="PackedScene" uid="uid://bm5neck5w1m7v" path="res://packed-scenes/core/menus/menu_nav_button.tscn" id="2_ftvfa"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_nrowu"]
+texture = ExtResource("1_ugqif")
+
+[node name="Menu" type="Panel" node_paths=PackedStringArray("ButtonsParent", "MenuButtons")]
+custom_minimum_size = Vector2(1920, 1080)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+theme_override_styles/panel = SubResource("StyleBoxTexture_nrowu")
+script = ExtResource("1_4lebm")
+ButtonsParent = NodePath("Control/VBoxContainer")
+MenuButtons = []
+metadata/_custom_type_script = "uid://b0mn584c600w0"
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -417.0
+offset_right = 451.0
+grow_vertical = 0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control"]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -400.0
+offset_bottom = 366.0
+grow_horizontal = 0
+alignment = 2
+
+[node name="MenuNavButton" parent="Control/VBoxContainer" instance=ExtResource("2_ftvfa")]
+layout_mode = 2
+text = "Play"
+
+[node name="MenuNavButton2" parent="Control/VBoxContainer" instance=ExtResource("2_ftvfa")]
+layout_mode = 2
+text = "Options"
+
+[node name="MenuNavButton3" parent="Control/VBoxContainer" instance=ExtResource("2_ftvfa")]
+layout_mode = 2
+text = "Credits"
+
+[node name="MenuNavButton4" parent="Control/VBoxContainer" instance=ExtResource("2_ftvfa")]
+layout_mode = 2
+text = "Quit"
+
+[node name="MenuNavButton5" parent="Control/VBoxContainer" instance=ExtResource("2_ftvfa")]
+layout_mode = 2
+text = "Quit"

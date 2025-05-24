@@ -1,0 +1,35 @@
+fileFormatVersion: 2
+guid: cc85bec47701b764caf2e20bfc05b8df
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - hyphenPrefab: {instanceID: 0}
+  - pipePrefab: {instanceID: 0}
+  - plusPrefab: {instanceID: 0}
+  - slashPrefab: {fileID: 7656651299388220054, guid: 5d0e88cff2955d548b2606490ec8c58a, type: 3}
+  - hashPrefab: {instanceID: 0}
+  - atsignPrefab: {instanceID: 0}
+  - percentPrefab: {instanceID: 0}
+  - ampersandPrefab: {instanceID: 0}
+  - asteriskPrefab: {instanceID: 0}
+  - colonPrefab: {instanceID: 0}
+  - periodPrefab: {instanceID: 0}
+  - apostrophePrefab: {instanceID: 0}
+  - bracketsPrefab: {instanceID: 0}
+  - bracesPrefab: {instanceID: 0}
+  - paranthesesPrefab: {instanceID: 0}
+  - caretPrefab: {instanceID: 0}
+  - anglebracketsPrefab: {instanceID: 0}
+  - equalsPrefab: {instanceID: 0}
+  - underscorePrefab: {instanceID: 0}
+  - tildePrefab: {instanceID: 0}
+  - xPrefab: {instanceID: 0}
+  - oPrefab: {instanceID: 0}
+  - zeroPrefab: {instanceID: 0}
+  - vPrefab: {instanceID: 0}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

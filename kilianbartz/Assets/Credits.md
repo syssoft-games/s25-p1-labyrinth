@@ -1,0 +1,8 @@
+- General Materials: Unity HDRP Samples
+- Concrete Material: [Yughues](https://assetstore.unity.com/packages/2d/textures-materials/concrete/yughues-free-concrete-materials-12951)
+- Candle: [matotteus](https://www.cgtrader.com/free-3d-models/architectural/decoration/candle-04977b6a-946b-48db-a883-52d8db5f6b5f)
+- Candle Flame: [SpeedTutor](https://www.youtube.com/watch?v=EKo1SLQD9KI)
+- Foodstep Sound Effect: [Ahmed_Abdulaal](https://pixabay.com/sound-effects/footsteps-sound-effect-337385/)
+- Enemy Model: [unknowndtsummoner](https://www.fab.com/listings/2cd72335-bd16-4c75-ae23-80778d88f93e)
+- FPS Graph: [Tayx](https://assetstore.unity.com/packages/tools/gui/graphy-ultimate-fps-counter-stats-monitor-debugger-105778)
+- ASCIIArt: [ASCII Art Archive](https://www.asciiart.eu/)

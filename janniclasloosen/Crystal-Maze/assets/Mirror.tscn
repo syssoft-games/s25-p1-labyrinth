@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://do6l4nni2dqhm"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jxl3d"]
+metallic = 1.0
+roughness = 0.0
+
+[sub_resource type="SphereMesh" id="SphereMesh_jxl3d"]
+material = SubResource("StandardMaterial3D_jxl3d")
+
+[node name="Mirror" type="Node3D"]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("SphereMesh_jxl3d")
+
+[node name="ReflectionProbe" type="ReflectionProbe" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.86265e-09, 0)
+size = Vector3(40, 20, 40)

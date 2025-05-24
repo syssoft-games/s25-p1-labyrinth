@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://dpuh6g6ax3gd4"]
+
+[ext_resource type="PackedScene" uid="uid://c00kn6lo01c0f" path="res://assets/mini-dungeon/Floor.tscn" id="1_673fr"]
+[ext_resource type="PackedScene" uid="uid://q16srveyjrhu" path="res://assets/mini-dungeon/Scaffold.tscn" id="2_8bbtk"]
+
+[node name="Path" type="Node3D"]
+
+[node name="Floor" parent="." instance=ExtResource("1_673fr")]
+transform = Transform3D(0.68, 0, 0, 0, 1, 0, 0, 0, 0.68, 0, 0, 0)
+
+[node name="Scaffold" parent="." instance=ExtResource("2_8bbtk")]

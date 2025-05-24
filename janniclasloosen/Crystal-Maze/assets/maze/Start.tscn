@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://d2dn7w632vtg3"]
+
+[ext_resource type="PackedScene" uid="uid://c00kn6lo01c0f" path="res://assets/mini-dungeon/Floor.tscn" id="1_vm3qq"]
+[ext_resource type="PackedScene" uid="uid://bnwhh32vo3hhw" path="res://player/PlayerController.tscn" id="2_yhtrv"]
+
+[node name="Start" type="Node3D"]
+
+[node name="Floor" parent="." instance=ExtResource("1_vm3qq")]
+
+[node name="PlayerController" parent="." instance=ExtResource("2_yhtrv")]

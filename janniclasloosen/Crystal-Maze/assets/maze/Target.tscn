@@ -1,0 +1,28 @@
+[gd_scene load_steps=6 format=3 uid="uid://denff7nr6uxgf"]
+
+[ext_resource type="Script" uid="uid://ctfcaq3arlg1f" path="res://scripts/pause/TargetStatus.gd" id="1_eccuj"]
+[ext_resource type="PackedScene" uid="uid://c00kn6lo01c0f" path="res://assets/mini-dungeon/Floor.tscn" id="1_ruufm"]
+[ext_resource type="PackedScene" uid="uid://0v0dd1wxx5iy" path="res://assets/mini-dungeon/FloatingCoin.tscn" id="2_xjshr"]
+[ext_resource type="PackedScene" uid="uid://cbixfy7myv1k6" path="res://assets/misc/Treasure.tscn" id="3_5p42a"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_5p42a"]
+
+[node name="Target" type="Node3D"]
+script = ExtResource("1_eccuj")
+
+[node name="Floor" parent="." instance=ExtResource("1_ruufm")]
+transform = Transform3D(0.68, 0, 0, 0, 1, 0, 0, 0, 0.68, 0, 0, 0)
+
+[node name="coin" parent="." instance=ExtResource("2_xjshr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0)
+max_height = 20.0
+speed = 0.5
+
+[node name="Treasure" parent="." instance=ExtResource("3_5p42a")]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0, 0, 0)
+
+[node name="Area3D" type="Area3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 0, 1, 0)
+shape = SubResource("BoxShape3D_5p42a")

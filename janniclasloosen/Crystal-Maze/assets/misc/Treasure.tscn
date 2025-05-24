@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://cbixfy7myv1k6"]
+
+[ext_resource type="PackedScene" uid="uid://c8ofxus8njvih" path="res://assets/misc/Treasure.fbx" id="1_uo6k2"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_uo6k2"]
+
+[node name="Treasure" instance=ExtResource("1_uo6k2")]
+
+[node name="OmniLight3D" type="OmniLight3D" parent="." index="1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.8, 0)
+light_color = Color(1, 0.803922, 0, 1)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." index="2"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" index="0"]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0, 0.75, -0.2)
+shape = SubResource("BoxShape3D_uo6k2")

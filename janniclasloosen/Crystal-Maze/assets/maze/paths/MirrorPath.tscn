@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://h330013map1l"]
+
+[ext_resource type="PackedScene" uid="uid://c00kn6lo01c0f" path="res://assets/mini-dungeon/Floor.tscn" id="1_u57cj"]
+[ext_resource type="PackedScene" uid="uid://rkkcfl6tnx16" path="res://assets/crystals/CrystalTowerC.tscn" id="2_ml0s7"]
+
+[node name="Path" type="Node3D"]
+
+[node name="Floor" parent="." instance=ExtResource("1_u57cj")]
+transform = Transform3D(0.68, 0, 0, 0, 1, 0, 0, 0, 0.68, 0, 0, 0)
+
+[node name="crystal_15" parent="." instance=ExtResource("2_ml0s7")]
+
+[node name="ReflectionProbe" type="ReflectionProbe" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.5, 0)
+blend_distance = 10.0
+size = Vector3(12, 5, 12)
+origin_offset = Vector3(0, -2.49, 0)
+enable_shadows = true

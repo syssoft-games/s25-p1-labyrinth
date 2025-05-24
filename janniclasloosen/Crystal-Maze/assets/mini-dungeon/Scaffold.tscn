@@ -1,0 +1,28 @@
+[gd_scene load_steps=3 format=3 uid="uid://q16srveyjrhu"]
+
+[ext_resource type="PackedScene" uid="uid://takcntwr2unm" path="res://assets/mini-dungeon/FBX format/wood-structure.fbx" id="2_843ts"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_843ts"]
+
+[node name="Scaffold" type="Node3D"]
+
+[node name="wood-structure" parent="." instance=ExtResource("2_843ts")]
+transform = Transform3D(6, 0, 0, 0, 6, 0, 0, 0, 6, 0, 0, 0)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 6, 0, 0, 0, 1, 2.5, 3, 2.5)
+shape = SubResource("BoxShape3D_843ts")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 6, 0, 0, 0, 1, 2.5, 3, -2.5)
+shape = SubResource("BoxShape3D_843ts")
+
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 6, 0, 0, 0, 1, -2.5, 3, -2.5)
+shape = SubResource("BoxShape3D_843ts")
+
+[node name="CollisionShape3D4" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 6, 0, 0, 0, 1, -2.5, 3, 2.5)
+shape = SubResource("BoxShape3D_843ts")

@@ -1,0 +1,32 @@
+[gd_scene load_steps=2 format=3 uid="uid://c00kn6lo01c0f"]
+
+[ext_resource type="PackedScene" uid="uid://covppalmcui4n" path="res://assets/mini-dungeon/FBX format/floor-detail.fbx" id="1_kbn8l"]
+
+[node name="Floor" type="Node3D"]
+
+[node name="floor-detail9" parent="." instance=ExtResource("1_kbn8l")]
+transform = Transform3D(3, 0, 0, 0, 1, 0, 0, 0, 3, 3, 0, 3)
+
+[node name="floor-detail8" parent="." instance=ExtResource("1_kbn8l")]
+transform = Transform3D(-1.31134e-07, 0, 3, 0, 1, 0, -3, 0, -1.31134e-07, 3, 0, 0)
+
+[node name="floor-detail6" parent="." instance=ExtResource("1_kbn8l")]
+transform = Transform3D(-1.31134e-07, 0, 3, 0, 1, 0, -3, 0, -1.31134e-07, 0, 0, 3)
+
+[node name="floor-detail7" parent="." instance=ExtResource("1_kbn8l")]
+transform = Transform3D(3, 0, 0, 0, 1, 0, 0, 0, 3, 0, 0, 0)
+
+[node name="floor-detail5" parent="." instance=ExtResource("1_kbn8l")]
+transform = Transform3D(-3, 0, -2.62268e-07, 0, 1, 0, 2.62268e-07, 0, -3, -3, 0, 0)
+
+[node name="floor-detail4" parent="." instance=ExtResource("1_kbn8l")]
+transform = Transform3D(-1.31134e-07, 0, -3, 0, 1, 0, 3, 0, -1.31134e-07, -3, 0, 3)
+
+[node name="floor-detail" parent="." instance=ExtResource("1_kbn8l")]
+transform = Transform3D(3, 0, 0, 0, 1, 0, 0, 0, 3, -3, 0, -3)
+
+[node name="floor-detail2" parent="." instance=ExtResource("1_kbn8l")]
+transform = Transform3D(-3, 0, 2.62268e-07, 0, 1, 0, -2.62268e-07, 0, -3, 0, 0, -3)
+
+[node name="floor-detail3" parent="." instance=ExtResource("1_kbn8l")]
+transform = Transform3D(3, 0, 0, 0, 1, 0, 0, 0, 3, 3, 0, -3)

@@ -1,0 +1,16 @@
+[gd_scene load_steps=4 format=3 uid="uid://3re8h8wflilo"]
+
+[ext_resource type="Script" uid="uid://c48xmjmokbrx4" path="res://scripts/player/PlayerMovement.gd" id="1_6r78h"]
+[ext_resource type="PackedScene" uid="uid://bcndd1v3siooj" path="res://assets/Hero.glb" id="1_bgt4v"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_yox3t"]
+
+[node name="CharacterBody3D" type="CharacterBody3D"]
+script = ExtResource("1_6r78h")
+
+[node name="HeroAsset" parent="." instance=ExtResource("1_bgt4v")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0, 1.5, 0)
+shape = SubResource("CapsuleShape3D_yox3t")

@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=3 uid="uid://cfrab4gmjmkeb"]
+
+[ext_resource type="PackedScene" uid="uid://c00kn6lo01c0f" path="res://assets/mini-dungeon/Floor.tscn" id="1_h1ov0"]
+[ext_resource type="PackedScene" uid="uid://b6pot21gd2bey" path="res://assets/crystals/CrystalSpikesB.tscn" id="2_aqfnq"]
+
+[node name="Path" type="Node3D"]
+
+[node name="Floor" parent="." instance=ExtResource("1_h1ov0")]
+transform = Transform3D(0.68, 0, 0, 0, 1, 0, 0, 0, 0.68, 0, 0, 0)
+
+[node name="CrystalSpikes" parent="." instance=ExtResource("2_aqfnq")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 1.6, 0, 0)

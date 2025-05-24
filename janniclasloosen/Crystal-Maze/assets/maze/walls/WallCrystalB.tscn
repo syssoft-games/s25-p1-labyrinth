@@ -1,0 +1,53 @@
+[gd_scene load_steps=4 format=3 uid="uid://cxtqg6kndgbgd"]
+
+[ext_resource type="PackedScene" uid="uid://cl028rredvwjn" path="res://assets/mini-dungeon/FBX format/wall.fbx" id="1_nj7sg"]
+[ext_resource type="PackedScene" uid="uid://c8sm0f2r7tmeo" path="res://assets/crystals/CrystalTowerA.tscn" id="2_nj7sg"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_fd36e"]
+
+[node name="Wall" instance=ExtResource("1_nj7sg")]
+
+[node name="ReflectionProbeSouth" type="ReflectionProbe" parent="." index="0"]
+transform = Transform3D(1, 0, 7.10543e-15, 0, 1, 0, -7.10543e-15, 0, 1, 0, 3, 9)
+size = Vector3(18, 6, 18)
+origin_offset = Vector3(0, -1, -4.49)
+enable_shadows = true
+
+[node name="ReflectionProbeEast" type="ReflectionProbe" parent="." index="1"]
+transform = Transform3D(1, 0, 7.10543e-15, 0, 1, 0, -7.10543e-15, 0, 1, 9, 3, 0)
+size = Vector3(18, 6, 18)
+origin_offset = Vector3(-5, -1, 0)
+enable_shadows = true
+
+[node name="ReflectionProbeWest" type="ReflectionProbe" parent="." index="2"]
+transform = Transform3D(1, 0, 7.10543e-15, 0, 1, 0, -7.10543e-15, 0, 1, -9, 3, 0)
+size = Vector3(18, 6, 18)
+origin_offset = Vector3(5, -1, 0)
+enable_shadows = true
+
+[node name="ReflectionProbeNorth" type="ReflectionProbe" parent="." index="3"]
+transform = Transform3D(1, 0, 7.10543e-15, 0, 1, 0, -7.10543e-15, 0, 1, 0, 3, -9)
+size = Vector3(18, 6, 18)
+origin_offset = Vector3(0, -1, 5)
+enable_shadows = true
+
+[node name="wall" parent="." index="4"]
+transform = Transform3D(6, 0, 0, 0, 6, 0, 0, 0, 6, 0, 0, 0)
+
+[node name="CrystalNorth" parent="." index="5" instance=ExtResource("2_nj7sg")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 0.6, 0, 8.74228e-08, 0, -1, 0, 0, -2.5)
+
+[node name="CrystalEast" parent="." index="6" instance=ExtResource("2_nj7sg")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 0.6, 0, -1, 0, -4.37114e-08, 2.5, 0, 0)
+
+[node name="CrystalSouth" parent="." index="7" instance=ExtResource("2_nj7sg")]
+transform = Transform3D(1, 0, 0, 0, 0.6, 0, 0, 0, 1, 0, 0, 2.5)
+
+[node name="CrystalWest" parent="." index="8" instance=ExtResource("2_nj7sg")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 0.6, 0, 1, 0, -4.37114e-08, -2.5, 0, 0)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." index="9"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" index="0"]
+transform = Transform3D(6, 0, 0, 0, 6, 0, 0, 0, 6, 0, 3, 0)
+shape = SubResource("BoxShape3D_fd36e")

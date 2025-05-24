@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://cto8hxe5tjxcn"]
+
+[ext_resource type="PackedScene" uid="uid://cl028rredvwjn" path="res://assets/mini-dungeon/FBX format/wall.fbx" id="1_uadxp"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_hm2qh"]
+
+[node name="Wall" instance=ExtResource("1_uadxp")]
+
+[node name="wall" parent="." index="0"]
+transform = Transform3D(6, 0, 0, 0, 6, 0, 0, 0, 6, 0, 0, 0)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." index="1"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" index="0"]
+transform = Transform3D(6, 0, 0, 0, 6, 0, 0, 0, 6, 0, 3, 0)
+shape = SubResource("BoxShape3D_hm2qh")

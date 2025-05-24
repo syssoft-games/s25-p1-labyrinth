@@ -1,0 +1,29 @@
+[gd_scene load_steps=4 format=3 uid="uid://c5rr88lnwjf81"]
+
+[ext_resource type="PackedScene" uid="uid://cl028rredvwjn" path="res://assets/mini-dungeon/FBX format/wall.fbx" id="1_a35ab"]
+[ext_resource type="PackedScene" uid="uid://jwy3xfittegi" path="res://assets/mini-dungeon/FBX format/banner.fbx" id="2_y1mxp"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_5j45a"]
+
+[node name="Wall" instance=ExtResource("1_a35ab")]
+
+[node name="wall" parent="." index="0"]
+transform = Transform3D(6, 0, 0, 0, 6, 0, 0, 0, 6, 0, 0, 0)
+
+[node name="BannerSouth" parent="." index="1" instance=ExtResource("2_y1mxp")]
+transform = Transform3D(6, 0, 0, 0, 6, 0, 0, 0, 6, 0, 0, 6)
+
+[node name="BannerNorth" parent="." index="2" instance=ExtResource("2_y1mxp")]
+transform = Transform3D(-6, 0, -5.24537e-07, 0, 6, 0, 5.24537e-07, 0, -6, 0, 0, -6)
+
+[node name="BannerWest" parent="." index="3" instance=ExtResource("2_y1mxp")]
+transform = Transform3D(-2.62268e-07, 0, -6, 0, 6, 0, 6, 0, -2.62268e-07, -6, 0, 0)
+
+[node name="BannerEast" parent="." index="4" instance=ExtResource("2_y1mxp")]
+transform = Transform3D(-2.62268e-07, 0, 6, 0, 6, 0, -6, 0, -2.62268e-07, 6, 0, 0)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." index="5"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" index="0"]
+transform = Transform3D(6, 0, 0, 0, 6, 0, 0, 0, 6, 0, 3, 0)
+shape = SubResource("BoxShape3D_5j45a")

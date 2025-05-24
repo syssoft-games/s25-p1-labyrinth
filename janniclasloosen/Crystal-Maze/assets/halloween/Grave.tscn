@@ -1,0 +1,24 @@
+[gd_scene load_steps=4 format=3 uid="uid://bcpt54742vmkp"]
+
+[ext_resource type="PackedScene" uid="uid://dr2qm6m72pwdg" path="res://assets/halloween/Grave/grave_A.fbx" id="1_o0841"]
+[ext_resource type="PackedScene" uid="uid://bndlrgkvkc736" path="res://assets/halloween/Plaque Candles/plaque_candles.fbx" id="2_pfrwn"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_o0841"]
+
+[node name="Grave" type="Node3D"]
+
+[node name="grave_A" parent="." instance=ExtResource("1_o0841")]
+
+[node name="plaque_candles" parent="." instance=ExtResource("2_pfrwn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.815)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(2, 0, 0, 0, 1, 0, 0, 0, 2.25, 0, 0, 0.625)
+shape = SubResource("BoxShape3D_o0841")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 1)
+light_color = Color(0.0862745, 0.890196, 0.407843, 1)
+shadow_enabled = true

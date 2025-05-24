@@ -1,0 +1,45 @@
+[gd_scene load_steps=21 format=3 uid="uid://c5fu3bvspdjga"]
+
+[ext_resource type="Texture2D" uid="uid://b2ekqci47bfje" path="res://assets/hdr/NightSkyHDRI004_8K-HDR.exr" id="1_cjal3"]
+[ext_resource type="Script" uid="uid://c1d5ghf2kiddw" path="res://scripts/MazeGenerator.gd" id="1_k07xo"]
+[ext_resource type="PackedScene" uid="uid://c5rr88lnwjf81" path="res://assets/maze/walls/WallBanner.tscn" id="2_gm34k"]
+[ext_resource type="PackedScene" uid="uid://crrro3lc02e1k" path="res://assets/maze/walls/WallGrave.tscn" id="3_fn7yj"]
+[ext_resource type="PackedScene" uid="uid://c5dwceuohnkdi" path="res://assets/maze/walls/WallTransparent.tscn" id="4_xdyba"]
+[ext_resource type="PackedScene" uid="uid://cxtqg6kndgbgd" path="res://assets/maze/walls/WallCrystalB.tscn" id="5_b1ed2"]
+[ext_resource type="PackedScene" uid="uid://6vbccgu42gn1" path="res://assets/maze/paths/CrystalPathA.tscn" id="6_wx38t"]
+[ext_resource type="PackedScene" uid="uid://cfrab4gmjmkeb" path="res://assets/maze/paths/CrystalPathB.tscn" id="7_hjepx"]
+[ext_resource type="PackedScene" uid="uid://imv5qamn3fma" path="res://assets/maze/paths/CrystalPathC.tscn" id="8_wwdnn"]
+[ext_resource type="PackedScene" uid="uid://p7m1tcf43su7" path="res://assets/maze/paths/GatePath.tscn" id="9_7trey"]
+[ext_resource type="PackedScene" uid="uid://bkmbrgl7psyl1" path="res://assets/maze/paths/GravePath.tscn" id="10_3ycfk"]
+[ext_resource type="PackedScene" uid="uid://hyddrvq844cw" path="res://assets/maze/paths/LanternPath.tscn" id="11_22g2n"]
+[ext_resource type="PackedScene" uid="uid://dpuh6g6ax3gd4" path="res://assets/maze/paths/ScaffoldPath.tscn" id="12_u06j6"]
+[ext_resource type="PackedScene" uid="uid://bhbivsfcv2mda" path="res://assets/maze/paths/StonePathA.tscn" id="13_popug"]
+[ext_resource type="PackedScene" uid="uid://de5yb7vghprmc" path="res://assets/maze/paths/StonePathB.tscn" id="14_uu7u5"]
+[ext_resource type="PackedScene" uid="uid://h330013map1l" path="res://assets/maze/paths/MirrorPath.tscn" id="15_aqwt5"]
+[ext_resource type="PackedScene" uid="uid://c3ltfp0i5xvth" path="res://assets/maze/paths/AdventurerPath.tscn" id="16_pw3kf"]
+
+[sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_nfivy"]
+panorama = ExtResource("1_cjal3")
+
+[sub_resource type="Sky" id="Sky_i7hgn"]
+sky_material = SubResource("PanoramaSkyMaterial_nfivy")
+
+[sub_resource type="Environment" id="Environment_1nqs0"]
+background_mode = 2
+background_color = Color(0.0923971, 0.0923971, 0.0923971, 1)
+background_energy_multiplier = 0.25
+sky = SubResource("Sky_i7hgn")
+ssr_enabled = true
+glow_enabled = true
+
+[node name="Maze" type="Node3D"]
+script = ExtResource("1_k07xo")
+map_file_path = "res://maps/test.txt"
+base_path_weight = 4.0
+wall_scenes = Array[PackedScene]([ExtResource("2_gm34k"), ExtResource("3_fn7yj"), ExtResource("4_xdyba"), ExtResource("5_b1ed2"), ExtResource("5_b1ed2")])
+wall_weights = Array[float]([3.0, 3.0, 3.0, 0.5, 0.5])
+path_scenes = Array[PackedScene]([ExtResource("6_wx38t"), ExtResource("7_hjepx"), ExtResource("8_wwdnn"), ExtResource("9_7trey"), ExtResource("10_3ycfk"), ExtResource("11_22g2n"), ExtResource("12_u06j6"), ExtResource("13_popug"), ExtResource("14_uu7u5"), ExtResource("15_aqwt5"), ExtResource("16_pw3kf")])
+path_weights = Array[float]([2.0, 2.0, 2.0, 2.0, 2.0, 2.0, 2.0, 4.0, 4.0, 0.5, 0.25])
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_1nqs0")

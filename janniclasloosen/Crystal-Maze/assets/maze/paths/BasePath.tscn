@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://c6s8qw6rsgsgs"]
+
+[ext_resource type="PackedScene" uid="uid://c00kn6lo01c0f" path="res://assets/mini-dungeon/Floor.tscn" id="1_fj0yk"]
+
+[node name="Path" type="Node3D"]
+
+[node name="Floor" parent="." instance=ExtResource("1_fj0yk")]
+transform = Transform3D(0.68, 0, 0, 0, 1, 0, 0, 0, 0.68, 0, 0, 0)

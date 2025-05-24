@@ -1,0 +1,24 @@
+[gd_scene load_steps=5 format=3 uid="uid://bprhcrpxdwck6"]
+
+[ext_resource type="Material" uid="uid://bw8srqnvv3gf1" path="res://Resources/mirror.tres" id="1_mik0e"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_mik0e"]
+friction = 0.0
+
+[sub_resource type="BoxMesh" id="BoxMesh_vef74"]
+size = Vector3(10, 5, 0.01)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_hve3p"]
+size = Vector3(1, 1, 0.01)
+
+[node name="Mirror" type="StaticBody3D"]
+physics_material_override = SubResource("PhysicsMaterial_mik0e")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+material_override = ExtResource("1_mik0e")
+mesh = SubResource("BoxMesh_vef74")
+skeleton = NodePath("")
+surface_material_override/0 = ExtResource("1_mik0e")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("BoxShape3D_hve3p")

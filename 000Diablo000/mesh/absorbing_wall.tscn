@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://fph335j3oqd0"]
+
+[ext_resource type="Material" uid="uid://k21xff3n0toy" path="res://Resources/absorbing_wall.tres" id="1_wn3b2"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_davnl"]
+size = Vector3(4, 10, 4)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_wn3b2"]
+size = Vector3(4, 10, 4)
+
+[node name="Absorbing_Wall" type="StaticBody3D"]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4, 0)
+material_override = ExtResource("1_wn3b2")
+mesh = SubResource("BoxMesh_davnl")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4, 0)
+shape = SubResource("BoxShape3D_wn3b2")

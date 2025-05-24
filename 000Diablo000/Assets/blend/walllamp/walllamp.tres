@@ -1,0 +1,14 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://dg5ex57pokn2a"]
+
+[ext_resource type="Texture2D" uid="uid://nj5pp7ambkou" path="res://Assets/blend/walllamp/street_lamp_02_diff_4k.jpg" id="1_2iinx"]
+
+[resource]
+albedo_texture = ExtResource("1_2iinx")
+metallic = 1.0
+metallic_texture = ExtResource("1_2iinx")
+clearcoat_enabled = true
+anisotropy_enabled = true
+ao_enabled = true
+subsurf_scatter_enabled = true
+backlight_enabled = true
+refraction_enabled = true

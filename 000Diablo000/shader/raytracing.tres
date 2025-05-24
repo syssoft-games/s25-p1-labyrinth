@@ -1,0 +1,16 @@
+[gd_resource type="ShaderMaterial" load_steps=2 format=3 uid="uid://ck5bmoabllo48"]
+
+[ext_resource type="Shader" uid="uid://cgvkqgh22nw6u" path="res://shader/raytracing.gdshader" id="1_xsuk1"]
+
+[resource]
+shader = ExtResource("1_xsuk1")
+shader_parameter/camera_position = Vector3(0, 0, 4)
+shader_parameter/camera_rotation = Basis(1, 0, 0, 0, 1, 0, 0, 0, 1)
+shader_parameter/camera_aspect = 2.0
+shader_parameter/camera_vfov = 30.0
+shader_parameter/camera_focus = 2.0
+shader_parameter/camera_aperture = 0.005
+shader_parameter/camera_exposure = 1.6
+shader_parameter/camera_gamma = 2.2
+shader_parameter/light_quality = 0.2
+shader_parameter/frame = 1.0

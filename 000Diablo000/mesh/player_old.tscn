@@ -1,0 +1,36 @@
+[gd_scene load_steps=5 format=3 uid="uid://btfi66gr8x75n"]
+
+[ext_resource type="Script" uid="uid://buoknb06agk2b" path="res://script/player_movement.gd" id="1_oul6g"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_80nbo"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_e2o6t"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_e2o6t"]
+
+[node name="Player" type="RigidBody3D"]
+top_level = true
+physics_material_override = SubResource("PhysicsMaterial_80nbo")
+lock_rotation = true
+linear_damp = 1.0
+script = ExtResource("1_oul6g")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+visible = false
+mesh = SubResource("CapsuleMesh_e2o6t")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("CapsuleShape3D_e2o6t")
+
+[node name="TwistPivot" type="Node3D" parent="."]
+
+[node name="PitchPivot" type="Node3D" parent="TwistPivot"]
+
+[node name="Camera3D" type="Camera3D" parent="TwistPivot/PitchPivot"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.75, 0)
+
+[node name="SpotLight3D" type="SpotLight3D" parent="TwistPivot/PitchPivot"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.625959, 0.216282, -0.249946)
+light_size = 50.0
+shadow_enabled = true
+distance_fade_enabled = true

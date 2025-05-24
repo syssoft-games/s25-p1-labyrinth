@@ -1,0 +1,24 @@
+[gd_scene load_steps=4 format=3 uid="uid://ch2y1m7i3kxbt"]
+
+[ext_resource type="Material" uid="uid://b3sr6t0vvfw7a" path="res://Resources/transparent_wall.tres" id="1_8hug2"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_3r5y4"]
+size = Vector3(4, 10, 4)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_8hug2"]
+size = Vector3(4, 10, 4)
+
+[node name="Trasparent_Wall" type="StaticBody3D"]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4, 0)
+material_override = ExtResource("1_8hug2")
+mesh = SubResource("BoxMesh_3r5y4")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4, 0)
+shape = SubResource("BoxShape3D_8hug2")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.30556, 0)
+light_color = Color(0, 1, 1, 1)

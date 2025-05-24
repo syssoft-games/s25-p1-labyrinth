@@ -1,0 +1,17 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://gc5v0wmepkwh"]
+
+[resource]
+metallic = 1.0
+roughness = 0.0
+emission_enabled = true
+normal_enabled = true
+rim_enabled = true
+clearcoat_enabled = true
+ao_enabled = true
+ao_light_affect = 0.33
+heightmap_enabled = true
+subsurf_scatter_enabled = true
+backlight_enabled = true
+refraction_enabled = true
+grow = true
+use_particle_trails = true

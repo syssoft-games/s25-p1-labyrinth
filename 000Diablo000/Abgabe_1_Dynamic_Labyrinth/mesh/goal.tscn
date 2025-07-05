@@ -1,0 +1,20 @@
+[gd_scene load_steps=5 format=3 uid="uid://dn78ptwdi83de"]
+
+[ext_resource type="Material" uid="uid://niphvjnkyybk" path="res://Resources/goal.tres" id="1_5qasj"]
+[ext_resource type="Script" uid="uid://4d0speocw7te" path="res://script/goal.gd" id="1_ie4lk"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_eow3j"]
+size = Vector3(4, 0.1, 4)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_j5wjh"]
+size = Vector3(4, 0.1, 4)
+
+[node name="Goal" type="Area3D"]
+script = ExtResource("1_ie4lk")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+material_override = ExtResource("1_5qasj")
+mesh = SubResource("BoxMesh_eow3j")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("BoxShape3D_j5wjh")

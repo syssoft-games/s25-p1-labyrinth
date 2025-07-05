@@ -1,0 +1,7 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://bwmq50inn65sw"]
+
+[ext_resource type="Texture2D" uid="uid://dmofdlkpkyroy" path="res://Assets/20250518_115849188_iOS.png" id="1_rkiyb"]
+
+[resource]
+albedo_texture = ExtResource("1_rkiyb")
+uv1_scale = Vector3(4, 4, 1)

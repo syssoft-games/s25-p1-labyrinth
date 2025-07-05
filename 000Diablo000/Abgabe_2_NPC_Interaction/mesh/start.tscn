@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://bwtofrb0wdltv"]
+
+[ext_resource type="Material" uid="uid://dp8jqnq71tnne" path="res://Resources/start.tres" id="1_85jtr"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_mfdv2"]
+size = Vector3(4, 0.1, 4)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_iotsf"]
+size = Vector3(4, 0.1, 4)
+
+[node name="start" type="StaticBody3D"]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+material_override = ExtResource("1_85jtr")
+mesh = SubResource("BoxMesh_mfdv2")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("BoxShape3D_iotsf")

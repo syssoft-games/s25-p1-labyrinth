@@ -1,0 +1,29 @@
+[gd_scene load_steps=5 format=3 uid="uid://d1js0mtoa2ee1"]
+
+[ext_resource type="Script" uid="uid://dwico5lryf5jb" path="res://script/npc.gd" id="1_byjly"]
+[ext_resource type="PackedScene" uid="uid://dhoyeff231dq3" path="res://character/Y Bot/y_bot.tscn" id="2_byjly"]
+[ext_resource type="Script" uid="uid://bijmrbccgaw6i" path="res://script/y_bot_ai.gd" id="3_gj4b0"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_sildc"]
+radius = 0.2
+height = 1.8
+
+[node name="NPC" type="CharacterBody3D"]
+script = ExtResource("1_byjly")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.859883, 0)
+shape = SubResource("CapsuleShape3D_sildc")
+
+[node name="Camera3D" type="Camera3D" parent="CollisionShape3D"]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0.797809, 0.0889987)
+
+[node name="HTTPRequest" type="HTTPRequest" parent="."]
+
+[node name="Y_Bot" parent="." instance=ExtResource("2_byjly")]
+script = ExtResource("3_gj4b0")
+animation_player_path = NodePath("GeneralSkeleton/AnimationPlayer")
+http_node_path = NodePath("../HTTPRequest")
+npc_path = NodePath("..")
+
+[connection signal="request_completed" from="HTTPRequest" to="Y_Bot" method="_on_HTTPRequest_request_completed"]

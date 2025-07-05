@@ -1,0 +1,129 @@
+[gd_scene load_steps=20 format=3 uid="uid://cm05ve4si2kbg"]
+
+[ext_resource type="PackedScene" uid="uid://pqmvacgx1gm0" path="res://mesh/wall.tscn" id="1_80nbo"]
+[ext_resource type="Script" uid="uid://wrtivu2ykmu8" path="res://script/levelloader.gd" id="1_eow3j"]
+[ext_resource type="PackedScene" uid="uid://qu4vve7yn1m1" path="res://mesh/half_wall.tscn" id="2_feb5d"]
+[ext_resource type="Texture2D" uid="uid://c38iap4xp0qha" path="res://map/maze.png" id="2_j5wjh"]
+[ext_resource type="PackedScene" uid="uid://cwvjg37v77osu" path="res://mesh/platform.tscn" id="3_fc0e3"]
+[ext_resource type="PackedScene" uid="uid://c8kpvonvxmixt" path="res://mesh/ground.tscn" id="3_vef74"]
+[ext_resource type="PackedScene" uid="uid://bwtofrb0wdltv" path="res://mesh/start.tscn" id="5_lc2xo"]
+[ext_resource type="Material" uid="uid://c4yiwovjyuon3" path="res://shader/skybox_material.tres" id="7_hve3p"]
+[ext_resource type="PackedScene" uid="uid://dn78ptwdi83de" path="res://mesh/goal.tscn" id="8_j5wjh"]
+[ext_resource type="PackedScene" uid="uid://bccp12mgxnrb4" path="res://mesh/player.tscn" id="9_hve3p"]
+[ext_resource type="PackedScene" uid="uid://bprhcrpxdwck6" path="res://mesh/mirror.tscn" id="9_vef74"]
+[ext_resource type="PackedScene" uid="uid://cy8ot4ced362g" path="res://mesh/mirror2.tscn" id="11_mfdv2"]
+[ext_resource type="PackedScene" uid="uid://ch2y1m7i3kxbt" path="res://mesh/transparent_wall.tscn" id="13_215e1"]
+[ext_resource type="PackedScene" uid="uid://fph335j3oqd0" path="res://mesh/absorbing_wall.tscn" id="14_215e1"]
+[ext_resource type="PackedScene" uid="uid://b6mi33u6g5dxr" path="res://mesh/reflecting_wall.tscn" id="15_7sc4i"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_mwb40"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_mwb40"]
+size = Vector3(300, 0.3, 100)
+
+[sub_resource type="Sky" id="Sky_mfdv2"]
+sky_material = ExtResource("7_hve3p")
+
+[sub_resource type="Environment" id="Environment_80nbo"]
+background_mode = 2
+background_color = Color(0.651673, 0.767033, 1, 1)
+sky = SubResource("Sky_mfdv2")
+tonemap_mode = 3
+ssr_enabled = true
+ssr_max_steps = 128
+ssr_fade_in = 1.2
+ssr_fade_out = 0.901251
+ssao_enabled = true
+ssao_radius = 1.51
+ssao_intensity = 1.63
+ssil_enabled = true
+sdfgi_enabled = true
+sdfgi_use_occlusion = true
+sdfgi_min_cell_size = 0.01
+glow_enabled = true
+glow_normalized = true
+glow_bloom = 0.16
+fog_enabled = true
+fog_light_energy = 0.94
+fog_sky_affect = 0.017
+volumetric_fog_enabled = true
+volumetric_fog_length = 32.87
+volumetric_fog_detail_spread = 0.5
+adjustment_enabled = true
+
+[node name="Game" type="Node"]
+
+[node name="LevelLoader" type="Node3D" parent="."]
+script = ExtResource("1_eow3j")
+level_image = ExtResource("2_j5wjh")
+player_scene = ExtResource("9_hve3p")
+ground_scene = ExtResource("3_vef74")
+wall_scene = ExtResource("1_80nbo")
+transparent_scene = ExtResource("13_215e1")
+reflecting_scene = ExtResource("15_7sc4i")
+absorbing_scene = ExtResource("14_215e1")
+start_scene = ExtResource("5_lc2xo")
+finish_scene = ExtResource("8_j5wjh")
+
+[node name="Ground" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.407593, -20.3203, -5.72643)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Ground"]
+transform = Transform3D(300, 0, 0, 0, 0.3, 0, 0, 0, 100, 0, 15.5064, 0)
+mesh = SubResource("BoxMesh_mwb40")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Ground"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 15.506, 0)
+shape = SubResource("BoxShape3D_mwb40")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_80nbo")
+
+[node name="Wall" parent="." instance=ExtResource("1_80nbo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 36.6207, 4.36371, -17.2239)
+
+[node name="Half_Wall" parent="." instance=ExtResource("2_feb5d")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.95212, -0.631428, 6.30973)
+
+[node name="Platform" parent="." instance=ExtResource("3_fc0e3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.43603, -0.586293, -12.0843)
+
+[node name="Mirror" parent="." instance=ExtResource("9_vef74")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.24673, -0.957478, -11.8537)
+
+[node name="Sun" type="DirectionalLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -0.970384, -0.241567, 0, 0.241567, -0.970384, 0, 760.538, 0)
+light_color = Color(0.799896, 0.686017, 0.340263, 1)
+light_angular_distance = 90.0
+shadow_enabled = true
+directional_shadow_max_distance = 8192.0
+sky_mode = 2
+
+[node name="Moon" type="DirectionalLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.89712, 0.441788, 0, -0.441788, 0.89712, 0, 198.494, 0)
+light_color = Color(0.528231, 0.515389, 0.54101, 1)
+light_energy = 0.079
+
+[node name="Mirror2" parent="." instance=ExtResource("11_mfdv2")]
+transform = Transform3D(1, 0, 0, 0, 0.205333, -0.978692, 0, 0.978692, 0.205333, 36.5618, 0.753973, -16.186)
+
+[node name="start" parent="." instance=ExtResource("5_lc2xo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.01912, -11.2689)
+
+[node name="Transparent_Wall" parent="." instance=ExtResource("13_215e1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.1968, 0, -22.9153)
+
+[node name="Absorbing_Wall" parent="." instance=ExtResource("14_215e1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.13772, 0, -23.1637)
+
+[node name="Reflecting_Wall" parent="." instance=ExtResource("15_7sc4i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -18.2701)
+
+[node name="Goal_notifier" type="Node3D" parent="."]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="Goal_notifier"]
+
+[node name="Label" type="Label" parent="Goal_notifier/CanvasLayer"]
+offset_right = 40.0
+offset_bottom = 23.0
+autowrap_mode = 2

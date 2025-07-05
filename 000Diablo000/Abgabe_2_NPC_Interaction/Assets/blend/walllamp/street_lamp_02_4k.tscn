@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://bahw7n4wd2ud5"]
+
+[ext_resource type="PackedScene" uid="uid://caeyofu8vtlmh" path="res://Assets/blend/walllamp/street_lamp_02_4k.gltf" id="1_aqakf"]
+[ext_resource type="Material" uid="uid://dg5ex57pokn2a" path="res://Assets/blend/walllamp/walllamp.tres" id="2_2b6fc"]
+
+[node name="street_lamp_02_4k" instance=ExtResource("1_aqakf")]
+
+[node name="street_lamp_02" parent="." index="0"]
+material_override = ExtResource("2_2b6fc")

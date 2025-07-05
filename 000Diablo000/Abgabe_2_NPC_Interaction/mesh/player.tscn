@@ -1,0 +1,45 @@
+[gd_scene load_steps=5 format=3 uid="uid://bccp12mgxnrb4"]
+
+[ext_resource type="Script" uid="uid://nw6ot6r18gum" path="res://script/character_body_3d.gd" id="1_qsoth"]
+[ext_resource type="PackedScene" uid="uid://pac5aengwpob" path="res://character/X Bot/X_Bot.tscn" id="2_r5y8x"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_mfdv2"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_iotsf"]
+radius = 0.2
+height = 1.8
+
+[node name="NewPlayer" type="CharacterBody3D"]
+process_mode = 3
+script = ExtResource("1_qsoth")
+jump_velocity = 10.0
+infinit_jump = false
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.923213, 0)
+visible = false
+mesh = SubResource("CapsuleMesh_mfdv2")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.892583, 0)
+shape = SubResource("CapsuleShape3D_iotsf")
+
+[node name="TwistPivot" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.923213, -0.092842)
+
+[node name="PitchPivot" type="Node3D" parent="TwistPivot"]
+
+[node name="Camera3D" type="Camera3D" parent="TwistPivot/PitchPivot"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.306523, 0.76138, 1.44824)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="TwistPivot/PitchPivot/Camera3D"]
+
+[node name="SpotLight3D" type="SpotLight3D" parent="TwistPivot/PitchPivot"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.154745, 0.611458, -0.0922521)
+shadow_enabled = true
+distance_fade_enabled = true
+spot_range = 100.018
+spot_angle = 18.2028
+
+[node name="Player_Charakter_animated" parent="TwistPivot" instance=ExtResource("2_r5y8x")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, -0.923213, 0.092842)

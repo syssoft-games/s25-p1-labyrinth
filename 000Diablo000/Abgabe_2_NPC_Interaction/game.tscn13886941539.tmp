@@ -1,0 +1,82 @@
+[gd_scene load_steps=9 format=3 uid="uid://cm05ve4si2kbg"]
+
+[ext_resource type="PackedScene" uid="uid://dojpxw0mq0rvt" path="res://Collision/wall.tscn" id="1_80nbo"]
+[ext_resource type="Script" uid="uid://buoknb06agk2b" path="res://player/player_movement.gd" id="2_e2o6t"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_mwb40"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_mwb40"]
+size = Vector3(300, 0.3, 100)
+
+[sub_resource type="Environment" id="Environment_80nbo"]
+background_mode = 1
+background_color = Color(0.651673, 0.767033, 1, 1)
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_80nbo"]
+friction = 0.8
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_e2o6t"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_e2o6t"]
+
+[node name="Game" type="Node"]
+
+[node name="Ground" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.407593, -0.786293, -5.72643)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Ground"]
+transform = Transform3D(300, 0, 0, 0, 0.3, 0, 0, 0, 100, 0, 0, 0)
+mesh = SubResource("BoxMesh_mwb40")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Ground"]
+shape = SubResource("BoxShape3D_mwb40")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_80nbo")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.987111, 0.160036, 0, -0.160036, 0.987111, 0, 16.2173, 66.491)
+light_energy = 2.293
+light_indirect_energy = 0.0
+shadow_enabled = true
+
+[node name="Objects" type="Node3D" parent="." groups=["Wall"]]
+
+[node name="Wall" parent="Objects" instance=ExtResource("1_80nbo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 10.4216, 0)
+
+[node name="Wall2" parent="Objects" instance=ExtResource("1_80nbo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -27.4651, 10.4216, 0)
+
+[node name="Wall3" parent="Objects" instance=ExtResource("1_80nbo")]
+transform = Transform3D(-0.0993718, 0, -0.99505, 0, 1, 0, 0.99505, 0, -0.0993718, 0, 10.4216, 27.7731)
+
+[node name="Wall4" parent="Objects" instance=ExtResource("1_80nbo")]
+transform = Transform3D(0.125506, 0, 0.992093, 0, 1, 0, -0.992093, 0, 0.125506, 0, 10.4216, -28.6131)
+
+[node name="Wall5" parent="Objects" instance=ExtResource("1_80nbo")]
+transform = Transform3D(0.983941, 0, 0.178493, 0, 1, 0, -0.178493, 0, 0.983941, 0, 10.4216, 6.02983)
+
+[node name="Wall6" parent="Objects" instance=ExtResource("1_80nbo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 10.4216, 13.2197)
+
+[node name="Player" type="RigidBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 22.2901, 2.62423, 0)
+top_level = true
+physics_material_override = SubResource("PhysicsMaterial_80nbo")
+lock_rotation = true
+linear_damp = 3.0
+script = ExtResource("2_e2o6t")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Player"]
+mesh = SubResource("CapsuleMesh_e2o6t")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Player"]
+shape = SubResource("CapsuleShape3D_e2o6t")
+
+[node name="TwistPivot" type="Node3D" parent="Player"]
+
+[node name="PitchPivot" type="Node3D" parent="Player/TwistPivot"]
+
+[node name="Camera3D" type="Camera3D" parent="Player/TwistPivot/PitchPivot"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.75, 0)

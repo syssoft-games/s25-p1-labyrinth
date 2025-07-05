@@ -1,0 +1,34 @@
+[gd_scene load_steps=4 format=3 uid="uid://bccp12mgxnrb4"]
+
+[ext_resource type="Script" uid="uid://nw6ot6r18gum" path="res://script/character_body_3d.gd" id="1_qsoth"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_mfdv2"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_iotsf"]
+
+[node name="NewPlayer" type="CharacterBody3D"]
+process_mode = 3
+script = ExtResource("1_qsoth")
+jump_velocity = 10.0
+infinit_jump = false
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+visible = false
+mesh = SubResource("CapsuleMesh_mfdv2")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("CapsuleShape3D_iotsf")
+
+[node name="TwistPivot" type="Node3D" parent="."]
+
+[node name="PitchPivot" type="Node3D" parent="TwistPivot"]
+
+[node name="Camera3D" type="Camera3D" parent="TwistPivot/PitchPivot"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.75, 0)
+
+[node name="SpotLight3D" type="SpotLight3D" parent="TwistPivot/PitchPivot"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.625959, 0.216282, -0.249946)
+shadow_enabled = true
+distance_fade_enabled = true
+spot_range = 100.018
+spot_angle = 18.2028

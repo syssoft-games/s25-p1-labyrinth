@@ -1,0 +1,13 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://dvxp5sssgd0j2"]
+
+[ext_resource type="Texture2D" uid="uid://bkyo30x0w84mw" path="res://Assets/20250518_115206304_iOS.png" id="1_wvs20"]
+
+[resource]
+diffuse_mode = 3
+specular_mode = 1
+albedo_texture = ExtResource("1_wvs20")
+anisotropy_enabled = true
+ao_enabled = true
+ao_light_affect = 0.04
+backlight_enabled = true
+uv1_scale = Vector3(4, 4, 1)

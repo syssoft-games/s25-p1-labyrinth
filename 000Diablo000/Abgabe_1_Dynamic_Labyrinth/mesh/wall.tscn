@@ -1,0 +1,47 @@
+[gd_scene load_steps=6 format=3 uid="uid://pqmvacgx1gm0"]
+
+[ext_resource type="Material" uid="uid://dvxp5sssgd0j2" path="res://Assets/brickwall.tres" id="1_c1j1y"]
+[ext_resource type="PackedScene" uid="uid://bahw7n4wd2ud5" path="res://Assets/blend/walllamp/street_lamp_02_4k.tscn" id="2_5vdts"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_c1j1y"]
+size = Vector3(4, 10, 4)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_5vdts"]
+size = Vector3(4, 10, 4)
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_c1j1y"]
+
+[node name="Wall" type="StaticBody3D"]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4, 0)
+material_override = ExtResource("1_c1j1y")
+mesh = SubResource("BoxMesh_c1j1y")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4, 0)
+shape = SubResource("BoxShape3D_5vdts")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.89873, 2.78269)
+light_color = Color(0.587019, 0.574726, 3.85046e-07, 1)
+light_energy = 1.911
+light_size = 1.0
+shadow_enabled = true
+distance_fade_enabled = true
+distance_fade_begin = 802.04
+distance_fade_shadow = 1133.53
+distance_fade_length = 45.72
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="OmniLight3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1.01273)
+mesh = SubResource("CapsuleMesh_c1j1y")
+
+[node name="street_lamp_02_4k" parent="." instance=ExtResource("2_5vdts")]
+transform = Transform3D(-0.00141375, 0, 0.999999, 0, 1, 0, -0.999999, 0, -0.00141375, 2.0088, 3.19826, -0.067619)
+
+[node name="OmniLight3D" type="OmniLight3D" parent="street_lamp_02_4k"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.000830866, 0.77479, 0.587694)
+light_color = Color(0.587119, 0.580498, 7.70092e-07, 1)
+light_energy = 0.413
+omni_range = 3.5404

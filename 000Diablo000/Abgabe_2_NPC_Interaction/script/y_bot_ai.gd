@@ -54,7 +54,7 @@ func send_command_to_ai(command: String, history: String = "") -> void:
 		"history": history
 	}
 	var body = JSON.stringify(json_data)
-	var url = "http://host.docker.internal:8000/npc/respond"
+	var url = "http://127.0.0.1:8000/npc/respond"
 
 	print("Sende POST an: ", url)
 	print("Body: ", body)
